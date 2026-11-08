@@ -3,27 +3,90 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paws &amp; Pantries</title>
-<meta name="description" content="Free pet food and low-cost pet care help in New Jersey. Coming soon.">
-<style>
-  :root { --ink:#141414; --paper:#F7F5F0; --accent:#CC0033; --muted:#55525C; }
-  * { box-sizing: border-box; }
-  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-         background:var(--paper); color:var(--ink); font:18px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; padding:24px 16px; }
-  main { max-width:560px; }
-  h1 { font-size:clamp(36px, 8vw, 56px); line-height:1.05; margin:0 0 16px; letter-spacing:-1px; }
-  h1 span { color:var(--accent); }
-  p { margin:0 0 12px; }
-  .es { color:var(--muted); }
-  .tag { display:inline-block; margin-bottom:20px; padding:4px 12px; border:2px solid var(--ink); border-radius:999px; font-weight:700; font-size:14px; }
-</style>
+<title>Paws &amp; Pantries: free pet food and low-cost pet care in NJ</title>
+<meta name="description" content="Free pet food and low-cost pet care in Middlesex County, New Jersey. Every listing confirmed by phone. English and Spanish.">
+<meta name="theme-color" content="#FFE07A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/common.js" defer></script>
+<script src="assets/help.js" defer></script>
 </head>
 <body>
-<main>
-  <span class="tag">Coming November 2026</span>
-  <h1>Paws <span>&amp;</span> Pantries</h1>
-  <p>Free pet food and low-cost pet care help in New Jersey, starting with Middlesex County.</p>
-  <p class="es" lang="es">Ayuda gratuita con comida para mascotas y atención veterinaria de bajo costo en Nueva Jersey.</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="./" aria-label="Paws and Pantries home">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="15.5" rx="5" ry="4.2" fill="#2E2D33"/><circle cx="6" cy="9.5" r="2.2" fill="#2E2D33"/><circle cx="10" cy="6.2" r="2.2" fill="#2E2D33"/><circle cx="14" cy="6.2" r="2.2" fill="#2E2D33"/><circle cx="18" cy="9.5" r="2.2" fill="#2E2D33"/></svg>
+        Paws &amp; Pantries
+      </a>
+      <div class="tools">
+        <button class="pill-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
+        <button class="pill-btn" id="langBtn" type="button" data-i18n="lang">Español</button>
+      </div>
+    </div>
+    <div class="hero-row">
+      <div style="flex:1">
+        <h1 data-i18n="help_h1">Help for pets and the people who love them.</h1>
+        <p class="lede" data-i18n="help_lede">Free pet food and low-cost pet care in Middlesex County, NJ. No sign-up, no cost.</p>
+      </div>
+      <div class="zuzu">
+        <img src="assets/zuzu.jpg" alt="Zuzu, a silver tabby cat, lounging on her yellow bed" width="150" height="167">
+        <span class="tag" data-i18n="hi_zuzu">hi, I'm Zuzu</span>
+      </div>
+    </div>
+    <form class="search" id="searchForm" role="search">
+      <label for="town" class="sr" data-i18n="search_label">Town or ZIP code</label>
+      <input id="town" name="town" autocomplete="postal-code" data-i18n-ph="search_label" placeholder="Town or ZIP code">
+      <button class="btn" type="submit" data-i18n="search_btn">Find help</button>
+    </form>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="chips" role="group" aria-label="Filter by type">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true" data-i18n="f_all">Everything</button>
+    <button class="chip" type="button" data-filter="food" aria-pressed="false" data-i18n="f_food">Pet food</button>
+    <button class="chip" type="button" data-filter="vet" aria-pressed="false" data-i18n="f_vet">Vet care</button>
+    <button class="chip" type="button" data-filter="spay" aria-pressed="false" data-i18n="f_spay">Spay and neuter</button>
+  </div>
+
+  <section class="section" aria-labelledby="localH">
+    <div class="section-head"><h2 id="localH" data-i18n="local_h">Near you</h2></div>
+    <div class="list" id="localList"></div>
+  </section>
+
+  <section class="section" aria-labelledby="stateH">
+    <div class="section-head"><h2 id="stateH" data-i18n="statewide_h">Programs across New Jersey</h2></div>
+    <div class="list" id="stateList"></div>
+  </section>
+
+  <section class="section grid-2" aria-label="Why this exists">
+    <a class="card dark" href="need.html" style="text-decoration:none">
+      <span class="stat">92,600</span>
+      <span class="muted" data-i18n="stat_people">people in Middlesex County faced food insecurity in 2023</span>
+    </a>
+    <a class="card butter" href="wait.html" style="text-decoration:none">
+      <span class="stat">2x</span>
+      <span data-i18n="stat_wait">Senior cats waited about twice as long to be adopted</span>
+    </a>
+  </section>
+
+  <div class="section tip">
+    <p data-i18n="zuzu_tip">Zuzu's tip: call ahead. Lots of pantries only hand out pet food on certain days.</p>
+  </div>
+
+  <footer>
+    <p><span data-i18n="report">Something wrong with a listing?</span> <a href="about.html#report" data-i18n="report_link">Tell us</a>.</p>
+  </footer>
 </main>
+
+<nav class="nav" aria-label="Main">
+  <a href="./" aria-current="page" data-i18n="nav_help">Find help</a>
+  <a href="need.html" data-i18n="nav_need">NJ need</a>
+  <a href="wait.html" data-i18n="nav_wait">Pets who wait</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+</nav>
 </body>
 </html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which pets wait longest · Paws &amp; Pantries</title>
+<meta name="description" content="Which shelter pets wait longest to be adopted, from about 75,000 adoptions at the Austin Animal Center.">
+<meta name="theme-color" content="#FFE07A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/common.js" defer></script>
+<script src="assets/wait.js" defer></script>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="./" aria-label="Paws and Pantries home">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="15.5" rx="5" ry="4.2" fill="#2E2D33"/><circle cx="6" cy="9.5" r="2.2" fill="#2E2D33"/><circle cx="10" cy="6.2" r="2.2" fill="#2E2D33"/><circle cx="14" cy="6.2" r="2.2" fill="#2E2D33"/><circle cx="18" cy="9.5" r="2.2" fill="#2E2D33"/></svg>
+        Paws &amp; Pantries
+      </a>
+      <div class="tools">
+        <button class="pill-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
+        <button class="pill-btn" id="langBtn" type="button" data-i18n="lang">Español</button>
+      </div>
+    </div>
+    <h1 style="margin-top:18px" data-en="Which shelter pets wait the longest?" data-es="¿Qué mascotas esperan más en el refugio?">Which shelter pets wait the longest?</h1>
+    <p class="lede" style="margin-top:10px;max-width:40em" data-en="Every pet we keep at home is one less in a crowded shelter. Here's who waits longest once they're there, from about 75,000 adoptions at the Austin Animal Center (2013 to 2024)." data-es="Cada mascota que se queda en casa es una menos en un refugio lleno. Esto muestra quién espera más una vez allí, según unas 75,000 adopciones en el Austin Animal Center (2013 a 2024).">Every pet we keep at home is one less in a crowded shelter. Here's who waits longest once they're there, from about 75,000 adoptions at the Austin Animal Center (2013 to 2024).</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="chips" role="group" aria-label="Choose cats or dogs">
+    <button class="chip" type="button" data-sp="cat" aria-pressed="true" data-en="Cats" data-es="Gatos">Cats</button>
+    <button class="chip" type="button" data-sp="dog" aria-pressed="false" data-en="Dogs" data-es="Perros">Dogs</button>
+  </div>
+
+  <section class="section chart-card" aria-labelledby="barsH">
+    <h2 id="barsH"></h2>
+    <p class="muted" data-en="Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range." data-es="Comparado con una mascota parecida, con todo lo demás igual (edad, sexo, salud, cómo llegó y año). Las líneas muestran el rango de confianza del 95%.">Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range.</p>
+    <div class="bars" id="bars"></div>
+  </section>
+
+  <section class="section chart-card" aria-labelledby="tryH">
+    <h2 id="tryH" data-en="Try it: how long might this pet wait?" data-es="Pruébelo: ¿cuánto podría esperar esta mascota?">Try it: how long might this pet wait?</h2>
+    <div class="chips" role="group" aria-label="Age" id="ageChips"></div>
+    <div class="chips" role="group" aria-label="Traits" id="traitChips"></div>
+    <div class="tip" style="flex-direction:column;gap:4px">
+      <p class="result" id="result" aria-live="polite"></p>
+      <p class="muted small" id="resultNote"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-en="What this does and doesn't tell us" data-es="Lo que esto dice y lo que no">What this does and doesn't tell us</h2>
+    <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px">
+      <li data-en="It shows which traits go with longer waits. It can't predict one specific pet's wait: the model explains only about 13% (cats) to 21% (dogs) of the differences." data-es="Muestra qué rasgos van con esperas más largas. No puede predecir la espera de una mascota en particular: el modelo explica solo entre el 13% (gatos) y el 21% (perros) de las diferencias.">It shows which traits go with longer waits. It can't predict one specific pet's wait: the model explains only about 13% (cats) to 21% (dogs) of the differences.</li>
+      <li data-en="It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted." data-es="Viene de un refugio de Texas, así que los de Nueva Jersey pueden ser distintos. Solo cuenta mascotas que fueron adoptadas.">It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted.</li>
+      <li data-en="The famous black cat bias is real here, but small next to age and breed." data-es="El famoso prejuicio contra los gatos negros es real aquí, pero pequeño comparado con la edad y la raza.">The famous black cat bias is real here, but small next to age and breed.</li>
+    </ul>
+    <p class="muted small" id="src"></p>
+  </section>
+</main>
+
+<nav class="nav" aria-label="Main">
+  <a href="./" data-i18n="nav_help">Find help</a>
+  <a href="need.html" data-i18n="nav_need">NJ need</a>
+  <a href="wait.html" aria-current="page" data-i18n="nav_wait">Pets who wait</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+</nav>
+</body>
+</html>

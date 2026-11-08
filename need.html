@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NJ food need by county · Paws &amp; Pantries</title>
+<meta name="description" content="Where food need is highest in New Jersey: food insecurity, poverty, food access, and unemployment for all 21 counties.">
+<meta name="theme-color" content="#FFE07A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/common.js" defer></script>
+<script src="assets/need.js" defer></script>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="./" aria-label="Paws and Pantries home">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="15.5" rx="5" ry="4.2" fill="#2E2D33"/><circle cx="6" cy="9.5" r="2.2" fill="#2E2D33"/><circle cx="10" cy="6.2" r="2.2" fill="#2E2D33"/><circle cx="14" cy="6.2" r="2.2" fill="#2E2D33"/><circle cx="18" cy="9.5" r="2.2" fill="#2E2D33"/></svg>
+        Paws &amp; Pantries
+      </a>
+      <div class="tools">
+        <button class="pill-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
+        <button class="pill-btn" id="langBtn" type="button" data-i18n="lang">Español</button>
+      </div>
+    </div>
+    <h1 style="margin-top:18px" data-en="Where food need is highest in New Jersey" data-es="Dónde es mayor la necesidad de comida en Nueva Jersey">Where food need is highest in New Jersey</h1>
+    <p class="lede" style="margin-top:10px;max-width:40em" data-en="We combined four public measures into one need score for each county, then grouped counties that look alike. A score of 50 is the New Jersey county average." data-es="Combinamos cuatro medidas públicas en un puntaje de necesidad para cada condado y agrupamos los condados parecidos. Un puntaje de 50 es el promedio de los condados de Nueva Jersey.">We combined four public measures into one need score for each county, then grouped counties that look alike. A score of 50 is the New Jersey county average.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section chart-card" aria-labelledby="mapH">
+    <h2 id="mapH" data-en="Need score by county" data-es="Puntaje de necesidad por condado">Need score by county</h2>
+    <p class="muted" data-en="Tap or hover on a county to see its numbers. Darker means higher need." data-es="Toque o pase el cursor sobre un condado para ver sus datos. Más oscuro significa más necesidad.">Tap or hover on a county to see its numbers. Darker means higher need.</p>
+    <div class="map-wrap">
+      <div class="map">
+        <svg id="map" role="img" aria-label="Map of New Jersey counties shaded by need score"></svg>
+        <div class="legend" id="legend" aria-hidden="true"></div>
+        <div class="legend-labels"><span data-en="Lower need" data-es="Menos necesidad">Lower need</span><span data-en="Higher need" data-es="Más necesidad">Higher need</span></div>
+      </div>
+      <div class="detail" id="detail" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="grpH">
+    <h2 id="grpH" data-en="Three kinds of need" data-es="Tres tipos de necesidad">Three kinds of need</h2>
+    <div class="grid-2" id="groups"></div>
+  </section>
+
+  <section class="section chart-card" aria-labelledby="tblH">
+    <details>
+      <summary id="tblH" data-en="See all 21 counties as a table" data-es="Ver los 21 condados en una tabla">See all 21 counties as a table</summary>
+      <div class="table-box"><table id="table"></table></div>
+    </details>
+  </section>
+
+  <section class="section">
+    <h2 data-en="How we made this" data-es="Cómo lo hicimos">How we made this</h2>
+    <p data-en="The need score averages four standardized measures: food insecurity (2023), poverty (2019 to 2023), the share of people with limited access to healthy food (2019), and unemployment (2024). The groups come from k-means clustering, checked against hierarchical clustering, which gave nearly the same groups." data-es="El puntaje promedia cuatro medidas estandarizadas: inseguridad alimentaria (2023), pobreza (2019 a 2023), la parte de la población con acceso limitado a comida saludable (2019) y desempleo (2024). Los grupos vienen de un análisis de conglomerados k-means, comprobado con un análisis jerárquico que dio casi los mismos grupos.">The need score averages four standardized measures: food insecurity (2023), poverty (2019 to 2023), the share of people with limited access to healthy food (2019), and unemployment (2024). The groups come from k-means clustering, checked against hierarchical clustering, which gave nearly the same groups.</p>
+    <p class="muted small" data-en="Limits: county numbers hide big differences between towns, and no public data shows pet ownership by county." data-es="Límites: los datos por condado esconden grandes diferencias entre pueblos, y no hay datos públicos de mascotas por condado.">Limits: county numbers hide big differences between towns, and no public data shows pet ownership by county.</p>
+    <p class="muted small" id="sources"></p>
+  </section>
+</main>
+
+<nav class="nav" aria-label="Main">
+  <a href="./" data-i18n="nav_help">Find help</a>
+  <a href="need.html" aria-current="page" data-i18n="nav_need">NJ need</a>
+  <a href="wait.html" data-i18n="nav_wait">Pets who wait</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+</nav>
+</body>
+</html>
