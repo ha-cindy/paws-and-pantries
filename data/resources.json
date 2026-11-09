@@ -7,7 +7,9 @@
       "id": "nj-apc",
       "name": "NJ Low-Cost Spay/Neuter Program",
       "name_es": "Programa de esterilización de bajo costo de NJ",
-      "types": ["spay"],
+      "types": [
+        "spay"
+      ],
       "summary": "$10 spay or neuter for people on benefits like SNAP (Food Stamps), Medicaid, SSI, or Lifeline. $20 for pets adopted from a NJ shelter or pound.",
       "summary_es": "Esterilización por $10 para personas con beneficios como SNAP (cupones de alimentos), Medicaid, SSI o Lifeline. $20 para mascotas adoptadas de un refugio de NJ.",
       "how": "Call a participating vet to book. In Middlesex: Plainfield Animal Hospital (South Plainfield), Sayrebrook Veterinary Hospital (Sayreville), VCA Edgebrook Animal Hospital (East Brunswick). Bring your benefits ID.",
@@ -21,11 +23,15 @@
       "id": "nj-211",
       "name": "NJ 2-1-1",
       "name_es": "NJ 2-1-1",
-      "types": ["food", "vet", "spay"],
-      "summary": "Free, 24/7 help line for food, housing, and other services across New Jersey.",
-      "summary_es": "Línea de ayuda gratuita, 24/7, para comida, vivienda y otros servicios en Nueva Jersey.",
-      "how": "Dial 2-1-1 or search online.",
-      "how_es": "Marque 2-1-1 o busque en línea.",
+      "types": [
+        "food",
+        "vet",
+        "spay"
+      ],
+      "summary": "Help line, open 24/7, that connects New Jersey residents with food, housing, health, and other programs from a directory of over 6,300 services.",
+      "summary_es": "Línea de ayuda, abierta 24/7, que conecta a los residentes de Nueva Jersey con programas de comida, vivienda, salud y más, de un directorio de más de 6,300 servicios.",
+      "how": "Dial 2-1-1, text 898211, or search online.",
+      "how_es": "Marque 2-1-1, envíe un texto al 898211 o busque en línea.",
       "phone": "211",
       "link": "https://www.nj211.org/",
       "source": "NJ 2-1-1",
