@@ -14,7 +14,7 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--ground); color: var(--ink); font: 400 17px/1.5 var(--body); }
+body { margin: 0; background-color: var(--ground); background-image: radial-gradient(rgba(46,45,51,0.07) 1.2px, transparent 1.4px); background-size: 22px 22px; color: var(--ink); font: 400 17px/1.5 var(--body); }
 body.big { font-size: 20px; }
 a { color: var(--ink); text-decoration-thickness: 2px; text-decoration-color: #E8B320; text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--ink); }
@@ -33,7 +33,7 @@ p { margin: 0; }
 .tools { display: flex; gap: 8px; }
 .pill-btn { min-height: 40px; padding: 0 14px; border-radius: 999px; border: none; background: var(--cream); color: var(--ink); font: 800 14px var(--body); cursor: pointer; }
 .pill-btn[aria-pressed="true"] { background: var(--ink); color: var(--butter); }
-.hero-row { display: flex; gap: 20px; align-items: flex-end; margin-top: 18px; }
+.hero-row { display: flex; gap: 20px; align-items: center; margin-top: 18px; }
 .hero h1 { font-size: clamp(28px, 6vw, 46px); flex: 1; }
 .hero .lede { margin-top: 10px; font-size: 1.05em; max-width: 34em; }
 .zuzu { position: relative; flex-shrink: 0; }
@@ -131,3 +131,24 @@ footer { margin-top: 40px; font-size: 14px; color: var(--ink-2); }
 .tip-zuzu { width: 58px; height: auto; flex-shrink: 0; }
 .perch { margin-top: 74px !important; }
 .perch-zuzu { position: absolute; right: 18px; top: -66px; width: 104px; height: auto; }
+
+/* work-in-progress banner */
+.wip { background: var(--ink); color: #FFFFFF; font-size: 15px; }
+.wip-row { display: flex; align-items: center; gap: 10px; padding-top: 8px; padding-bottom: 8px; }
+.wip img { width: 36px; height: auto; flex-shrink: 0; }
+.wip strong { color: var(--butter); }
+
+/* hand-drawn squiggle under section headings */
+main h2 { padding-bottom: 12px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 10'%3E%3Cpath d='M3 6c6-5 10 3 16-1s10-4 16 0 10 4 16 0 10-4 18 0' fill='none' stroke='%23E8B320' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left bottom / 64px 9px; }
+.card h2, .chart-card h2, .item h2 { background: none; padding-bottom: 0; }
+
+/* cards in a grid shouldn't add their own top margin */
+.grid-2 > .section { margin-top: 0; }
+.meet { flex-direction: row !important; align-items: center; gap: 16px !important; }
+.meet-zuzu { width: 96px; height: auto; flex-shrink: 0; }
+.meet > div { display: flex; flex-direction: column; gap: 6px; }
+
+/* shared footer */
+.site-foot { margin-top: 44px; display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--ink-2); }
+.site-foot img { width: 64px; height: auto; flex-shrink: 0; }
+.site-foot > div { display: flex; flex-direction: column; gap: 4px; }
