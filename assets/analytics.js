@@ -1,7 +1,7 @@
 // Google Analytics 4: counts visits (including tagged QR flyers) and key actions.
 // Paste the Measurement ID below to switch it on. While it's empty, nothing loads and nothing is tracked.
 (function () {
-  const GA_ID = ""; // e.g. "G-XXXXXXXXXX"
+  const GA_ID = "G-LT1QTGK77H"; // e.g. "G-XXXXXXXXXX"
   window.ppTrack = function () {};
   if (!GA_ID) return;
   const s = document.createElement("script");
