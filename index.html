@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<script src="assets/analytics.js"></script>
 <script src="assets/common.js" defer></script>
 <script src="assets/help.js" defer></script>
 </head>
@@ -76,6 +77,15 @@
   <div class="section tip">
     <p data-i18n="zuzu_tip">Zuzu's tip: call ahead. Lots of pantries only hand out pet food on certain days.</p>
   </div>
+
+  <section class="section card" aria-labelledby="helpfulH" style="margin-top:26px">
+    <h2 id="helpfulH" style="font-size:20px" data-en="Did this help you today?" data-es="¿Le ayudó esto hoy?">Did this help you today?</h2>
+    <div class="chips" id="helpful">
+      <button class="chip" type="button" data-helpful="yes" data-en="Yes" data-es="Sí">Yes</button>
+      <button class="chip" type="button" data-helpful="no" data-en="Not yet" data-es="Todavía no">Not yet</button>
+    </div>
+    <p class="muted small" id="helpfulThanks" hidden data-en="Thank you! This tells us whether the site is working." data-es="¡Gracias! Esto nos dice si el sitio está funcionando.">Thank you! This tells us whether the site is working.</p>
+  </section>
 
   <footer>
     <p><span data-i18n="report">Something wrong with a listing?</span> <a href="about.html#report" data-i18n="report_link">Tell us</a>.</p>

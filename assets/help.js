@@ -55,6 +55,14 @@
       render();
       document.getElementById("localH").scrollIntoView({ behavior: "smooth" });
     });
+    document.querySelectorAll("[data-helpful]").forEach(b => b.addEventListener("click", () => {
+      window.ppTrack("helpful", { answer: b.dataset.helpful, filter: filter });
+      document.querySelectorAll("[data-helpful]").forEach(x => { x.setAttribute("aria-pressed", x === b ? "true" : "false"); x.disabled = true; });
+      document.getElementById("helpfulThanks").hidden = false;
+    }));
+    document.getElementById("searchForm").addEventListener("submit", () => {
+      window.ppTrack("search", { has_town: document.getElementById("town").value.trim() ? "yes" : "no" });
+    });
     fetch("data/resources.json").then(r => r.json()).then(d => { data = d; render(); })
       .catch(() => { document.getElementById("localList").innerHTML = '<div class="empty"><p><a href="tel:211">NJ 2-1-1</a></p></div>'; });
   });
