@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 12 200 150" role="img" aria-label="Zuzu the cat"><title>Zuzu</title><defs><filter id="crayon" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/>
+<feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/>
+<feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs><g filter="url(#crayon)" stroke="#2E2D33" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M46 74 Q42 30 58 26 Q72 30 86 48 Z" fill="#C9C8CE"/>
+<path d="M154 74 Q158 30 142 26 Q128 30 114 48 Z" fill="#C9C8CE"/>
+<ellipse cx="100" cy="96" rx="64" ry="52" fill="#C9C8CE"/>
+<path d="M86 50 l2 12 M100 47 v13 M114 50 l-2 12" stroke="#7A7982" stroke-width="5"/>
+<ellipse cx="76" cy="100" rx="5" ry="7" fill="#2E2D33" stroke="none"/>
+<ellipse cx="124" cy="100" rx="5" ry="7" fill="#2E2D33" stroke="none"/>
+<ellipse cx="100" cy="111" rx="5" ry="3.5" fill="#F4A9A8" stroke-width="2.5"/>
+<ellipse cx="60" cy="114" rx="8" ry="5" fill="#F4A9A8" stroke="none" opacity=".8"/>
+<ellipse cx="140" cy="114" rx="8" ry="5" fill="#F4A9A8" stroke="none" opacity=".8"/>
+<path d="M38 104 l-20 -3 M38 114 l-19 4 M162 104 l20 -3 M162 114 l19 4" stroke-width="3.5"/></g></svg>

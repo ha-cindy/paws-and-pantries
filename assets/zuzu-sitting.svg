@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 230" role="img" aria-label="Zuzu the cat, sitting"><title>Zuzu</title><defs><filter id="crayon" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/>
+<feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/>
+<feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs><g filter="url(#crayon)" stroke="#2E2D33" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M140 200 Q184 204 182 170 Q180 148 162 154" stroke-width="16"/>
+<path d="M140 200 Q184 204 182 170 Q180 148 162 154" stroke="#C9C8CE" stroke-width="7"/>
+<path d="M66 128 Q54 196 72 204 L148 204 Q166 196 154 128 Z" fill="#C9C8CE"/>
+<path d="M98 150 Q94 176 100 198 M122 150 Q126 176 120 198" stroke="#7A7982" stroke-width="0" />
+<ellipse cx="94" cy="204" rx="15" ry="10" fill="#C9C8CE"/>
+<ellipse cx="126" cy="204" rx="15" ry="10" fill="#C9C8CE"/>
+
+<path d="M56 74 Q52 30 68 26 Q82 30 96 48 Z" fill="#C9C8CE"/>
+<path d="M164 74 Q168 30 152 26 Q138 30 124 48 Z" fill="#C9C8CE"/>
+<ellipse cx="110" cy="96" rx="64" ry="52" fill="#C9C8CE"/>
+<path d="M96 50 l2 12 M110 47 v13 M124 50 l-2 12" stroke="#7A7982" stroke-width="5"/>
+<ellipse cx="86" cy="100" rx="5" ry="7" fill="#2E2D33" stroke="none"/>
+<ellipse cx="134" cy="100" rx="5" ry="7" fill="#2E2D33" stroke="none"/>
+<ellipse cx="110" cy="111" rx="5" ry="3.5" fill="#F4A9A8" stroke-width="2.5"/>
+<ellipse cx="70" cy="114" rx="8" ry="5" fill="#F4A9A8" stroke="none" opacity=".8"/>
+<ellipse cx="150" cy="114" rx="8" ry="5" fill="#F4A9A8" stroke="none" opacity=".8"/>
+<path d="M48 104 l-20 -3 M48 114 l-19 4 M172 104 l20 -3 M172 114 l19 4" stroke-width="3.5"/></g></svg>
