@@ -300,3 +300,86 @@ main h2::after { content: ""; display: block; width: 64px; height: 6px; margin-t
 .empty .icon, .item .icon, .empty > span { border-radius: 0 !important; }
 .empty > span.icon { border: 2px solid var(--ink); }
 @media (max-width: 600px) { .hero h1 { font-size: 27px; } }
+
+/* ===== Round 8: black desktop, fun cursors, working tools, a little more warmth ===== */
+html { cursor: url("cur-arrow.png") 0 0, auto; }
+a, button, summary, label, .chip, [role="button"], .map path { cursor: url("cur-paw.png") 19 2, pointer; }
+input, textarea { cursor: text; }
+body { background: #0E0E10; background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1.2px); background-size: 8px 8px; }
+.win { box-shadow: 0 0 0 1px #000, 8px 8px 0 #2E2D33, 0 20px 60px rgba(255,224,122,.08); }
+
+/* buttons that feel alive */
+.btn, .chip, .menu-btn, .tool, .tb-btns button, .sw { transition: transform .08s ease, background-color .15s ease, box-shadow .08s ease; }
+.btn:hover, .chip:hover, .menu-btn:hover, .tool:hover { transform: translate(-1px, -2px); box-shadow: var(--raised), 2px 3px 0 var(--ink); }
+.btn:not(.light):hover, .chip:not([aria-pressed="true"]):hover, .menu-btn:hover, .tool:not(.on):hover { background: var(--butter-soft); }
+.btn:active, .chip:active, .menu-btn:active, .tool:active, .tb-btns button:active { transform: translate(1px, 1px); border-color: var(--chrome-dk) var(--chrome-hi) var(--chrome-hi) var(--chrome-dk); box-shadow: inset 1px 1px 0 var(--chrome-lo); }
+.menu-link { transition: background-color .15s ease; }
+.menu-link:hover { background: var(--butter); }
+.menu-link:hover::first-letter { text-decoration-color: #C98415; }
+.menu-link[aria-current="page"]:hover { background: var(--ink); }
+
+/* title-bar buttons */
+.tb-btns button { width: 22px; height: 20px; padding: 0; background: var(--chrome); color: var(--ink); font: 800 12px/14px var(--body); border: 1.5px solid; border-color: var(--chrome-hi) var(--chrome-dk) var(--chrome-dk) var(--chrome-hi); box-shadow: var(--raised); }
+.tb-btns button:hover { background: var(--butter); }
+.tb-btns button[data-win="close"]:hover { background: #F4A9A8; }
+.win.min .workspace, .win.min .palette { display: none; }
+.win.min { max-width: 520px; }
+.win.max { max-width: none; margin: 0; }
+
+/* toolbox */
+.tool { padding: 0; }
+.tool.on { background: var(--butter); }
+.tool-opt { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+.tool-opt .size { display: block; background: var(--ink); width: 24px; }
+.tool-opt .s1 { height: 1px; } .tool-opt .s2 { height: 3px; } .tool-opt .s3 { height: 5px; }
+
+/* palette swatches are real buttons now */
+.sw { width: 16px; height: 16px; padding: 0; border: 1px solid; border-color: var(--chrome-lo) var(--chrome-hi) var(--chrome-hi) var(--chrome-lo); }
+.sw:hover { transform: scale(1.25); position: relative; z-index: 1; outline: 1.5px solid var(--ink); }
+.sw.on { outline: 2px solid var(--ink); outline-offset: 1px; }
+
+/* doodle layer */
+.doodle { position: absolute; left: 0; top: 0; width: 100%; z-index: 30; pointer-events: none; }
+body[data-tool="pencil"] .doodle, body[data-tool="brush"] .doodle, body[data-tool="spray"] .doodle, body[data-tool="bucket"] .doodle { pointer-events: auto; touch-action: none; }
+body[data-tool="pencil"] .doodle, body[data-tool="brush"] .doodle { cursor: url("cur-pencil.png") 0 22, crosshair; }
+body[data-tool="spray"] .doodle, body[data-tool="bucket"] .doodle { cursor: crosshair; }
+
+/* status bar flash when a tool talks */
+#statusMsg.flash { animation: flash .6s ease; }
+@keyframes flash { 0% { background: var(--butter); } 100% { background: transparent; } }
+
+/* in between the old site and Paint: yellow header band, softer cards */
+.hero { background: var(--hero-bg, #FFE07A); border-bottom: 3px solid var(--ink); box-shadow: 0 4px 0 rgba(46,45,51,.12); padding: 26px 0 26px; transition: background-color .35s ease; }
+.paper { --hero-bg: #FFE07A; }
+.paper.filled .hero { animation: fill .45s ease; }
+@keyframes fill { 0% { clip-path: circle(0% at 10% 50%); } 100% { clip-path: circle(150% at 10% 50%); } }
+.zuzu { background: #FFFFFF; }
+main h2 { font-family: var(--display); font-weight: 700; }
+.card, .chart-card { border-radius: 12px; box-shadow: 4px 4px 0 var(--butter); transition: transform .15s ease, box-shadow .15s ease; }
+.card:hover { transform: translate(-1px, -2px); box-shadow: 6px 7px 0 var(--butter); }
+.card.butter, .card.butter:hover { box-shadow: 4px 4px 0 var(--ink); }
+.card.dark { box-shadow: 4px 4px 0 #8E8D96; }
+.item { border-radius: 10px; transition: transform .15s ease; }
+.item::before { border-radius: 8px 8px 0 0; transition: background .2s ease; }
+.item:hover { transform: translate(-1px, -2px); }
+.item:hover::before { background: linear-gradient(90deg, #C98415, #FFE07A); }
+.tip, .empty { border-radius: 12px; }
+.fact { border-radius: 6px; }
+
+/* "Are you sure?" dialog */
+.dlg { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.dlg[hidden] { display: none; }
+.dlg-box { width: min(360px, 100%); background: var(--chrome); border: 2px solid; border-color: var(--chrome-hi) var(--chrome-dk) var(--chrome-dk) var(--chrome-hi); box-shadow: 6px 6px 0 #000; }
+.dlg-bar { background: linear-gradient(90deg, #2E2D33, #8E8D96); color: #FFFFFF; font-weight: 800; font-size: 14px; padding: 5px 8px; }
+.dlg-body { display: flex; gap: 14px; align-items: center; padding: 16px; }
+.dlg-body img { width: 64px; flex-shrink: 0; }
+.dlg-btns { display: flex; justify-content: flex-end; padding: 0 16px 14px; }
+.dlg-btns .btn { min-height: 38px; padding: 0 22px; }
+
+@media (max-width: 600px) {
+  .toolbox .tool:nth-child(n+7) { display: none; }
+  .toolbox .tool:nth-child(-n+6) { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+.paper main.wrap { padding-top: 28px; padding-bottom: 40px; }
+.tool-opt .size { width: 70%; }
