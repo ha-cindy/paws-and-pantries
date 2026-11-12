@@ -149,6 +149,28 @@
     rove(document.querySelector(".toolbox"), ".tool");
     rove(document.querySelector(".palette"), ".sw");
 
+    // first-visit nudge: people don't expect old Paint buttons to actually work
+    const box = document.querySelector(".toolbox");
+    let seen = false; try { seen = !!localStorage.getItem("pp_tools_seen"); } catch (e) { /* ignore */ }
+    const markSeen = () => { try { localStorage.setItem("pp_tools_seen", "1"); } catch (e) { /* ignore */ } };
+    if (box && !seen) {
+      box.classList.add("nudge");
+      const tip = document.createElement("div");
+      tip.className = "tool-tip"; tip.setAttribute("role", "note");
+      tip.innerHTML = `<img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><p></p><div class="tt-btns"><button type="button" class="menu-btn tt-try"></button><button type="button" class="menu-btn tt-x"></button></div>`;
+      const fill = () => {
+        tip.querySelector("p").textContent = L() === "es" ? "¡Psst! Estos botones de Paint funcionan de verdad. Tome el lápiz y dibuje en la página, o use la cubeta para pintar el encabezado." : "Psst! These Paint buttons really work. Grab the pencil and doodle on the page, or use the bucket to repaint the header.";
+        tip.querySelector(".tt-try").textContent = L() === "es" ? "✏ Probar el lápiz" : "✏ Try the pencil";
+        tip.querySelector(".tt-x").textContent = L() === "es" ? "Entendido" : "Got it";
+      };
+      fill(); document.addEventListener("pp:lang", fill);
+      box.parentNode.insertBefore(tip, box.nextSibling);
+      const done = (how) => { tip.remove(); box.classList.remove("nudge"); markSeen(); track("tool_tip", { how: how }); };
+      tip.querySelector(".tt-try").addEventListener("click", () => { done("try"); setTool("pencil"); say("Pencil on! Draw anywhere on the page. Eraser clears it.", "¡Lápiz listo! Dibuje en cualquier parte de la página. El borrador lo limpia."); });
+      tip.querySelector(".tt-x").addEventListener("click", () => done("dismiss"));
+      box.addEventListener("click", () => { if (tip.isConnected) done("used_tool"); });
+    }
+
     setTool("select");
   });
 })();
