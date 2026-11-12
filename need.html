@@ -9,12 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=13">
-<script src="assets/analytics.js?v=13"></script>
-<script src="assets/common.js?v=13" defer></script>
-<script src="assets/desktop.js?v=13" defer></script>
-<script src="assets/paint.js?v=13" defer></script>
-<script src="assets/need.js?v=13" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=14">
+<script src="assets/analytics.js?v=14"></script>
+<script src="assets/common.js?v=14" defer></script>
+<script src="assets/desktop.js?v=14" defer></script>
+<script src="assets/paint.js?v=14" defer></script>
+<script src="assets/need.js?v=14" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -42,8 +42,12 @@
 
 <main class="wrap">
   <section class="section chart-card" aria-labelledby="mapH">
-    <h2 id="mapH" data-en="Need score by county" data-es="Puntaje de necesidad por condado">Need score by county</h2>
-    <p class="muted" data-en="Tap or hover on a county to see its numbers. Darker means higher need." data-es="Toque o pase el cursor sobre un condado para ver sus datos. Más oscuro significa más necesidad.">Tap or hover on a county to see its numbers. Darker means higher need.</p>
+    <h2 id="mapH" data-en="Where pets and people need help most" data-es="Dónde más necesitan ayuda las mascotas y las personas">Where pets and people need help most</h2>
+    <p class="muted" data-en="Tap or hover on a county to see its numbers. Darker means more." data-es="Toque o pase el cursor sobre un condado para ver sus datos. Más oscuro significa más.">Tap or hover on a county to see its numbers. Darker means more.</p>
+    <div class="chips" role="group" aria-label="Map view">
+      <button class="chip" type="button" data-view="score" aria-pressed="true" data-en="Need score" data-es="Puntaje de necesidad">Need score</button>
+      <button class="chip" type="button" data-view="pets" aria-pressed="false" data-en="Pet households in need (est.)" data-es="Hogares con mascotas en necesidad (est.)">Pet households in need (est.)</button>
+    </div>
     <div class="map-wrap">
       <div class="map">
         <svg id="map" role="img" aria-label="Map of New Jersey counties shaded by need score"></svg>
@@ -52,6 +56,12 @@
       </div>
       <div class="detail" id="detail" aria-live="polite"></div>
     </div>
+  </section>
+
+  <section class="section chart-card" aria-labelledby="pnH">
+    <h2 id="pnH" data-en="Predicted demand: pet households facing hunger" data-es="Demanda estimada: hogares con mascotas que pasan hambre">Predicted demand: pet households facing hunger</h2>
+    <p class="muted" data-en="No one counts pets by county, so I estimated it. This is the first county-by-county estimate of pet food need in New Jersey that I know of." data-es="Nadie cuenta mascotas por condado, así que lo estimé. Es la primera estimación condado por condado de la necesidad de comida para mascotas en Nueva Jersey que conozco.">No one counts pets by county, so I estimated it. This is the first county-by-county estimate of pet food need in New Jersey that I know of.</p>
+    <div id="petNeed"></div>
   </section>
 
   <section class="section chart-card" aria-labelledby="exH">

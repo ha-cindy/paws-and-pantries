@@ -9,12 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=13">
-<script src="assets/analytics.js?v=13"></script>
-<script src="assets/common.js?v=13" defer></script>
-<script src="assets/desktop.js?v=13" defer></script>
-<script src="assets/paint.js?v=13" defer></script>
-<script src="assets/wait.js?v=13" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=14">
+<script src="assets/analytics.js?v=14"></script>
+<script src="assets/common.js?v=14" defer></script>
+<script src="assets/desktop.js?v=14" defer></script>
+<script src="assets/paint.js?v=14" defer></script>
+<script src="assets/wait.js?v=14" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -59,19 +59,32 @@
   </section>
 
   <section class="section chart-card" aria-labelledby="tryH">
-    <h2 id="tryH" data-en="Try it: how long might this pet wait?" data-es="Pruébelo: ¿cuánto podría esperar esta mascota?">Try it: how long might this pet wait?</h2>
+    <h2 id="tryH" data-en="Predict a pet's wait" data-es="Prediga la espera de una mascota">Predict a pet's wait</h2>
+    <p class="muted" data-en="Describe a pet and the model estimates how long it might wait to be adopted, based on about 75,000 real adoptions." data-es="Describa una mascota y el modelo estima cuánto podría esperar para ser adoptada, según unas 75,000 adopciones reales.">Describe a pet and the model estimates how long it might wait to be adopted, based on about 75,000 real adoptions.</p>
+    <p class="chip-label" data-en="Age" data-es="Edad">Age</p>
     <div class="chips" role="group" aria-label="Age" id="ageChips"></div>
+    <p class="chip-label" data-en="Looks and sex" data-es="Aspecto y sexo">Looks and sex</p>
     <div class="chips" role="group" aria-label="Traits" id="traitChips"></div>
-    <div class="tip" style="flex-direction:column;gap:4px;align-items:flex-start">
+    <p class="chip-label" data-en="How they arrived" data-es="Cómo llegó">How they arrived</p>
+    <div class="chips" role="group" aria-label="Intake story" id="storyChips"></div>
+    <div class="tip predict" style="flex-direction:column;gap:6px;align-items:flex-start">
       <p class="result" id="result" aria-live="polite"></p>
       <p class="muted small" id="resultNote"></p>
+      <p class="flag" id="flag" hidden></p>
     </div>
+    <p class="muted small" data-en="This is a Texas-based estimate, not a promise. It's meant to help shelters decide which pets need extra promotion, never to decide which pets get a chance." data-es="Es una estimación basada en Texas, no una promesa. Sirve para que los refugios decidan qué mascotas necesitan más promoción, nunca para decidir cuáles reciben una oportunidad.">This is a Texas-based estimate, not a promise. It's meant to help shelters decide which pets need extra promotion, never to decide which pets get a chance.</p>
+  </section>
+
+  <section class="section chart-card" aria-labelledby="hoH">
+    <h2 id="hoH" data-en="Does it actually work? The test" data-es="¿De verdad funciona? La prueba">Does it actually work? The test</h2>
+    <p class="muted" data-en="I trained the model on adoptions from 2014 to 2022, then asked it to predict 2023 and 2024, which it had never seen. Here's how it did." data-es="Entrené el modelo con adopciones de 2014 a 2022 y luego le pedí predecir 2023 y 2024, que nunca había visto. Así le fue.">I trained the model on adoptions from 2014 to 2022, then asked it to predict 2023 and 2024, which it had never seen. Here's how it did.</p>
+    <div id="holdout"></div>
   </section>
 
   <section class="section limits">
     <h2 data-en="What this can't tell you" data-es="Lo que esto no puede decirle">What this can't tell you</h2>
     <ul>
-      <li data-en="It shows which traits go with longer waits. It can't predict one specific pet's wait: the model explains only about 13% (cats) to 21% (dogs) of the differences." data-es="Muestra qué rasgos van con esperas más largas. No puede predecir la espera de una mascota en particular: el modelo explica solo entre el 13% (gatos) y el 21% (perros) de las diferencias.">It shows which traits go with longer waits. It can't predict one specific pet's wait: the model explains only about 13% (cats) to 21% (dogs) of the differences.</li>
+      <li data-en="It ranks pets well but can't call the exact day. On pets it had never seen, flagged &quot;slowest 20%&quot; dogs waited 42 days versus 18 for the rest, yet only 42% of day estimates landed within a factor of two." data-es="Ordena bien a las mascotas, pero no adivina el día exacto. Con mascotas que nunca vio, los perros marcados como &quot;20% más lento&quot; esperaron 42 días contra 18 del resto, pero solo el 42% de las estimaciones quedó dentro del doble o la mitad.">It ranks pets well but can't call the exact day. On pets it had never seen, flagged "slowest 20%" dogs waited 42 days versus 18 for the rest, yet only 42% of day estimates landed within a factor of two.</li>
       <li data-en="It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted." data-es="Viene de un refugio de Texas, así que los de Nueva Jersey pueden ser distintos. Solo cuenta mascotas que fueron adoptadas.">It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted.</li>
       <li data-en="It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors." data-es="Muestra patrones, no causas. Una gata mayor no espera más por ser peor. Menos personas buscan mascotas mayores.">It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors.</li>
       <li data-en="It should never be used to decide which pets get a chance. I built it to show who needs extra attention." data-es="Nunca debe usarse para decidir qué mascotas reciben una oportunidad. Lo hice para mostrar quién necesita más atención.">It should never be used to decide which pets get a chance. I built it to show who needs extra attention.</li>

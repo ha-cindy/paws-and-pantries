@@ -516,3 +516,51 @@ main h2 { font-family: var(--display); font-weight: 700; }
   .quiz-opts { grid-template-columns: 1fr; }
   .azu { right: 6px; left: 6px; width: auto; }
 }
+
+/* ===== Consistent bar sizing: menu bar, taskbar and clock all share one height ===== */
+.menubar { padding: 4px 6px; gap: 4px; }
+.menu-link, .menu-btn { box-sizing: border-box; height: 34px; display: inline-flex; align-items: center; padding: 0 12px; font-size: 14.5px; font-weight: 700; line-height: 1; }
+.menu-btn { min-height: 0; }
+.taskbar { height: 46px; padding: 4px 6px; gap: 6px; }
+.taskbar .start, .taskbar .task, .clock { box-sizing: border-box; height: 34px; display: inline-flex; align-items: center; padding: 0 12px; font-size: 14.5px; line-height: 1; }
+.taskbar .start { font-family: var(--pixel); font-size: 16px; min-width: 96px; }
+.taskbar .task { min-width: 110px; justify-content: center; }
+.clock { min-width: 92px; justify-content: center; }
+.win { margin-bottom: 54px; min-height: calc(100vh - 62px); }
+.statusbar { bottom: 46px; }
+.startmenu { bottom: 48px; }
+.azu { bottom: 56px; }
+@media (max-width: 600px) {
+  .menu-link, .menu-btn { height: 32px; padding: 0 9px; font-size: 13.5px; }
+  .taskbar .start, .taskbar .task, .clock { height: 32px; padding: 0 10px; }
+  .taskbar .task { min-width: 0; }
+  .win { margin-bottom: 46px; min-height: calc(100vh - 46px); }
+}
+
+/* ===== Predictor and holdout test ===== */
+.chip-label { font-size: 12.5px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; color: var(--ink-2); margin-top: 6px; }
+.predict .result { font-family: var(--pixel); font-size: 34px; line-height: 1; }
+.flag { background: var(--ink); color: var(--butter); font-weight: 800; padding: 8px 12px; font-size: 14.5px; }
+.ho-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.ho-stats div { background: var(--butter-soft); border: 2px solid var(--ink); padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+.ho-stats b { font-family: var(--pixel); font-size: 26px; line-height: 1; }
+.ho-stats span { font-size: 13.5px; line-height: 1.4; }
+.ho-chart { display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
+.ho-row { display: grid; grid-template-columns: 24px 1fr 70px; gap: 10px; align-items: center; font-size: 13px; }
+.ho-lab { font-family: var(--pixel); font-weight: 700; }
+.ho-track { position: relative; height: 18px; background: #F3F2EF; border: 1px solid var(--chrome-lo); }
+.ho-pred, .ho-act { position: absolute; left: 0; height: 7px; }
+.ho-pred { top: 1px; background: #F2C230; }
+.ho-act { bottom: 1px; background: #8E8D96; }
+.ho-val { font-weight: 700; text-align: right; white-space: nowrap; }
+.pn-total { font-size: 17px; line-height: 1.45; }
+.pn-total b { font-family: var(--pixel); font-size: 24px; }
+.pn-list { display: flex; flex-direction: column; gap: 4px; margin-top: 10px; }
+.pn-row { display: grid; grid-template-columns: 130px 1fr 72px; gap: 10px; align-items: center; font-size: 14px; }
+.pn-row.me { font-weight: 800; background: var(--butter-soft); outline: 2px solid var(--ink); outline-offset: 2px; }
+.pn-track { height: 14px; background: #F3F2EF; border: 1px solid var(--chrome-lo); }
+.pn-track span { display: block; height: 100%; background: #F2C230; }
+.pn-val { text-align: right; font-weight: 700; }
+.pn-how { margin-top: 10px; } .pn-how summary { font-weight: 800; cursor: pointer; }
+@media (max-width: 600px) { .pn-row { grid-template-columns: 96px 1fr 64px; font-size: 13px; } }
+.menu-link::first-letter { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }

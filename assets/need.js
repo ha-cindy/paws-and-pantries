@@ -10,7 +10,9 @@
     other: { en: "Lower rates, still many people", es: "Tasas más bajas, todavía muchas personas",
       den: "Below-average rates, but large counties still have big numbers. Middlesex has about 92,600 food-insecure people.", des: "Tasas bajo el promedio, pero los condados grandes tienen números altos. Middlesex tiene unas 92,600 personas con inseguridad alimentaria." },
   };
-  let data = null, sel = "Middlesex";
+  let data = null, sel = "Middlesex", view = "score";
+  const PET_BREAKS = [3000, 6000, 10000, 15000];
+  const fillFor = c => view === "pets" ? RAMP[PET_BREAKS.filter(b => c.pet_hh_est >= b).length] : color(c.need_score);
   const es = () => PP.lang === "es";
   const color = s => RAMP[BREAKS.filter(b => s >= b).length];
   const n = x => x.toLocaleString(es() ? "es-US" : "en-US");
@@ -19,8 +21,8 @@
   function detail(c) {
     const g = GROUPS[c.group];
     const rows = es()
-      ? [["Puntaje de necesidad", c.need_score.toFixed(1)], ["Inseguridad alimentaria", c.food_insecure_pct + "%"], ["Personas", "~" + n(c.food_insecure_people)], ["Niños con inseguridad alimentaria", c.child_food_insecure_pct + "%"], ["Pobreza", c.poverty_pct + "%"], ["Acceso limitado a comida saludable", c.limited_access_pct + "%"], ["Desempleo", c.unemployment_pct + "%"]]
-      : [["Need score", c.need_score.toFixed(1)], ["Food insecurity", c.food_insecure_pct + "%"], ["People", "~" + n(c.food_insecure_people)], ["Children food insecure", c.child_food_insecure_pct + "%"], ["Poverty", c.poverty_pct + "%"], ["Limited access to healthy food", c.limited_access_pct + "%"], ["Unemployment", c.unemployment_pct + "%"]];
+      ? [["Hogares con mascotas e inseguridad alimentaria (est.)", "~" + n(c.pet_hh_low) + " a " + n(c.pet_hh_est)], ["Puntaje de necesidad", c.need_score.toFixed(1)], ["Inseguridad alimentaria", c.food_insecure_pct + "%"], ["Personas", "~" + n(c.food_insecure_people)], ["Niños con inseguridad alimentaria", c.child_food_insecure_pct + "%"], ["Pobreza", c.poverty_pct + "%"], ["Acceso limitado a comida saludable", c.limited_access_pct + "%"], ["Desempleo", c.unemployment_pct + "%"]]
+      : [["Food-insecure households with a pet (est.)", "~" + n(c.pet_hh_low) + " to " + n(c.pet_hh_est)], ["Need score", c.need_score.toFixed(1)], ["Food insecurity", c.food_insecure_pct + "%"], ["People", "~" + n(c.food_insecure_people)], ["Children food insecure", c.child_food_insecure_pct + "%"], ["Poverty", c.poverty_pct + "%"], ["Limited access to healthy food", c.limited_access_pct + "%"], ["Unemployment", c.unemployment_pct + "%"]];
     document.getElementById("detail").innerHTML =
       `<h3>${esc(c.county)} ${es() ? "" : "County"}</h3><p class="badge" style="margin-top:6px">${esc(es() ? g.es : g.en)}</p>
        <dl class="kv">${rows.map(r => `<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>`;
@@ -70,13 +72,24 @@
     if (!data) return;
     const svg = document.getElementById("map");
     svg.setAttribute("viewBox", data.viewBox);
-    svg.innerHTML = data.counties.map(c => `<path data-c="${esc(c.county)}" d="${c.path}" fill="${color(c.need_score)}" tabindex="0"><title>${esc(c.county)}: ${c.need_score.toFixed(1)}</title></path>`).join("");
+    svg.innerHTML = data.counties.map(c => `<path data-c="${esc(c.county)}" d="${c.path}" fill="${fillFor(c)}" tabindex="0"><title>${esc(c.county)}: ${view === "pets" ? "~" + n(c.pet_hh_est) + (es() ? " hogares con mascotas" : " pet households") : c.need_score.toFixed(1)}</title></path>`).join("");
     svg.querySelectorAll("path").forEach(p => {
       const c = data.counties.find(x => x.county === p.dataset.c);
       const pick = () => { sel = c.county; detail(c); };
       p.addEventListener("mouseenter", pick); p.addEventListener("click", pick); p.addEventListener("focus", pick);
     });
     document.getElementById("legend").innerHTML = RAMP.map(c => `<span style="background:${c}"></span>`).join("");
+    document.querySelectorAll("[data-view]").forEach(b => { b.setAttribute("aria-pressed", b.dataset.view === view ? "true" : "false"); b.onclick = () => { view = b.dataset.view; render(); try { window.ppTrack && window.ppTrack("need_view", { view: view }); } catch (e) { /* ignore */ } }; });
+    const ll = document.querySelector(".legend-labels");
+    if (ll) ll.innerHTML = view === "pets" ? `<span>${es() ? "Menos hogares" : "Fewer households"}</span><span>${es() ? "Más hogares" : "More households"}</span>` : `<span>${es() ? "Menos necesidad" : "Lower need"}</span><span>${es() ? "Más necesidad" : "Higher need"}</span>`;
+    const pn = document.getElementById("petNeed");
+    if (pn && data.pet_need) {
+      const top = [...data.counties].sort((a, b) => b.pet_hh_est - a.pet_hh_est);
+      const max = top[0].pet_hh_est;
+      pn.innerHTML = `<p class="pn-total"><b>~${n(data.pet_need.total_low)} ${es() ? "a" : "to"} ${n(data.pet_need.total_est)}</b> ${es() ? "hogares de Nueva Jersey tienen una mascota y pasan hambre, según mi estimación. Middlesex es el número 4." : "New Jersey households have a pet and face food insecurity, by my estimate. Middlesex ranks 4th."}</p>
+        <div class="pn-list">${top.map((c, i) => `<div class="pn-row${c.county === "Middlesex" ? " me" : ""}"><span>${i + 1}. ${esc(c.county)}</span><span class="pn-track"><span style="width:${100 * c.pet_hh_est / max}%"></span></span><span class="pn-val">~${n(c.pet_hh_est)}</span></div>`).join("")}</div>
+        <details class="pn-how"><summary>${es() ? "Cómo lo calculé" : "How I calculated it"}</summary><p>${es() ? "Personas con inseguridad alimentaria ÷ 2.6 personas por hogar × 47% de hogares de NJ con mascota. El número bajo usa 38%, porque los hogares de menores ingresos tienen mascotas un poco menos. Es una estimación, no un conteo: nadie publica datos de mascotas por condado." : "Food-insecure people ÷ 2.6 people per household × 47% of NJ households that own a pet. The low number uses 38%, since lower-income households own pets a little less often. It's an estimate, not a count: nobody publishes pet data by county."}</p><p class="muted small">${esc(data.pet_need.sources.pet_share)}. ${esc(data.pet_need.sources.household_size)}.</p></details>`;
+    }
     detail(data.counties.find(x => x.county === sel));
     document.getElementById("groups").innerHTML = ["south", "urban", "other"].map(k => {
       const names = data.counties.filter(c => c.group === k).map(c => c.county).join(", ");

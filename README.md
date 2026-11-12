@@ -18,3 +18,7 @@ Live site: https://ha-cindy.github.io/paws-and-pantries/
 - County shapes: US Census county boundaries via the plotly/datasets GeoJSON.
 
 A solo project by Cindy Ha, MS in Marketing Analytics and Insights, Rutgers Business School.
+
+## Model checks (added Nov 11, 2026)
+- `analysis/model1_holdout.py`: trains the wait model on 2014 to 2022 adoptions and tests it on 2023 to 2024. Writes `data/wait_holdout.json` (test results, final coefficients for the site predictor, slow-20% cutoff).
+- `analysis/model4_pet_need.py`: estimates food-insecure households with a pet per county (food-insecure people / 2.6 per household x 47% NJ pet ownership; low bound 38%). Adds `pet_hh_est` and `pet_hh_low` to `data/counties.json`.

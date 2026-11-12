@@ -1,0 +1,158 @@
+{
+ "split": "train 2014-2022, test 2023-2024",
+ "species": {
+  "cat": {
+   "n_train": 26717,
+   "n_test": 4855,
+   "spearman": 0.261,
+   "mae_days": 21.8,
+   "mae_baseline_days": 23.3,
+   "median_abs_error_days": 16.0,
+   "within_2x_pct": 41.9,
+   "flag_median_days": 32.2,
+   "rest_median_days": 20.4,
+   "flag_precision_pct": 28.6,
+   "deciles": [
+    {
+     "pred": 12.9,
+     "actual": 7.1,
+     "n": 613
+    },
+    {
+     "pred": 16.4,
+     "actual": 10.2,
+     "n": 371
+    },
+    {
+     "pred": 22.4,
+     "actual": 28.2,
+     "n": 1175
+    },
+    {
+     "pred": 24.0,
+     "actual": 29.0,
+     "n": 1174
+    },
+    {
+     "pred": 25.0,
+     "actual": 12.9,
+     "n": 65
+    },
+    {
+     "pred": 27.3,
+     "actual": 17.0,
+     "n": 731
+    },
+    {
+     "pred": 32.2,
+     "actual": 34.3,
+     "n": 315
+    },
+    {
+     "pred": 42.3,
+     "actual": 45.1,
+     "n": 411
+    }
+   ],
+   "coef": {
+    "Intercept": 2.8216,
+    "C(age_grp, Treatment('Young (1-3)'))[T.Adult (4-7)]": 0.4028,
+    "C(age_grp, Treatment('Young (1-3)'))[T.Baby (<1)]": -0.0824,
+    "C(age_grp, Treatment('Young (1-3)'))[T.Senior (8+)]": 0.7783,
+    "C(intake_type, Treatment('Stray'))[T.Other]": -0.1094,
+    "C(intake_type, Treatment('Stray'))[T.Owner Surrender]": -0.5113,
+    "C(intake_type, Treatment('Stray'))[T.Public Assist]": 0.1236,
+    "C(condition)[T.Nursing/neonatal]": 1.0098,
+    "C(condition)[T.Sick/injured/other]": 0.4194,
+    "female": 0.067,
+    "intact": 0.4067,
+    "black": 0.187
+   },
+   "resid_sd": 1.0225,
+   "slow20_cut_log": 3.2953,
+   "formula": "y ~ C(age_grp, Treatment('Young (1-3)')) + female + intact + black + C(intake_type, Treatment('Stray')) + C(condition)"
+  },
+  "dog": {
+   "n_train": 38502,
+   "n_test": 4560,
+   "spearman": 0.305,
+   "mae_days": 27.9,
+   "mae_baseline_days": 30.8,
+   "median_abs_error_days": 12.4,
+   "within_2x_pct": 41.6,
+   "flag_median_days": 42.1,
+   "rest_median_days": 18.1,
+   "flag_precision_pct": 41.4,
+   "deciles": [
+    {
+     "pred": 6.0,
+     "actual": 11.1,
+     "n": 458
+    },
+    {
+     "pred": 7.0,
+     "actual": 15.6,
+     "n": 546
+    },
+    {
+     "pred": 7.7,
+     "actual": 18.0,
+     "n": 484
+    },
+    {
+     "pred": 9.0,
+     "actual": 19.2,
+     "n": 344
+    },
+    {
+     "pred": 10.8,
+     "actual": 19.3,
+     "n": 576
+    },
+    {
+     "pred": 11.9,
+     "actual": 22.3,
+     "n": 343
+    },
+    {
+     "pred": 14.5,
+     "actual": 22.2,
+     "n": 449
+    },
+    {
+     "pred": 17.2,
+     "actual": 24.0,
+     "n": 483
+    },
+    {
+     "pred": 24.5,
+     "actual": 41.3,
+     "n": 469
+    },
+    {
+     "pred": 36.8,
+     "actual": 43.9,
+     "n": 408
+    }
+   ],
+   "coef": {
+    "Intercept": 2.4729,
+    "C(age_grp, Treatment('Young (1-3)'))[T.Adult (4-7)]": 0.2994,
+    "C(age_grp, Treatment('Young (1-3)'))[T.Baby (<1)]": -0.3898,
+    "C(age_grp, Treatment('Young (1-3)'))[T.Senior (8+)]": 0.4652,
+    "C(intake_type, Treatment('Stray'))[T.Other]": 0.3925,
+    "C(intake_type, Treatment('Stray'))[T.Owner Surrender]": -0.1209,
+    "C(intake_type, Treatment('Stray'))[T.Public Assist]": 0.4293,
+    "C(condition)[T.Nursing/neonatal]": 1.5385,
+    "C(condition)[T.Sick/injured/other]": 0.7041,
+    "female": -0.0893,
+    "intact": 0.1534,
+    "black": 0.1307,
+    "pit_type": 0.7395
+   },
+   "resid_sd": 1.0338,
+   "slow20_cut_log": 2.9759,
+   "formula": "y ~ C(age_grp, Treatment('Young (1-3)')) + female + intact + black + C(intake_type, Treatment('Stray')) + C(condition) + pit_type"
+  }
+ }
+}
