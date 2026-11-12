@@ -39,8 +39,8 @@
 
     const bar = document.createElement("div");
     bar.className = "taskbar";
-    bar.innerHTML = `<button type="button" class="start" id="startBtn" aria-haspopup="true" aria-expanded="false"><img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="26" height="20"><span data-en="Start" data-es="Inicio">Start</span></button>
-      <span class="task on"><img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="20" height="15"><span>zuzu.bmp</span></span>
+    bar.innerHTML = `<button type="button" class="start" id="startBtn" aria-haspopup="true" aria-expanded="false"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16"><span data-en="Start" data-es="Inicio">Start</span></button>
+      <span class="task on"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16"><span>zuzu.bmp</span></span>
       <button type="button" class="task" id="azuTask" aria-pressed="false"><span data-en="Ask Zuzu" data-es="Pregúntele a Zuzu">Ask Zuzu</span></button>
       <a class="task" href="club.html#quiz" data-track="taskbar quiz"><span data-en="Quiz" data-es="Quiz">Quiz</span></a>
       <span class="tb-space"></span><span class="clock" id="clock" aria-hidden="true"></span>`;
@@ -76,7 +76,7 @@
 
     // Ask Zuzu
     const log = document.getElementById("azuLog"), quick = document.getElementById("azuQuick"), input = document.getElementById("azuIn");
-    const say = (html, who) => { const d = document.createElement("div"); d.className = "azu-msg " + who; d.innerHTML = (who === "z" ? '<img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="30" height="23">' : "") + `<div>${html}</div>`; log.appendChild(d); log.scrollTop = log.scrollHeight; };
+    const say = (html, who) => { const d = document.createElement("div"); d.className = "azu-msg " + who; d.innerHTML = (who === "z" ? '<img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16">' : "") + `<div>${html}</div>`; log.appendChild(d); log.scrollTop = log.scrollHeight; };
     const quicks = () => { quick.innerHTML = INTENTS.map(i => `<button type="button" class="chip" data-intent="${i.id}">${esc(tr(i.en, i.es))}</button>`).join(""); input.placeholder = tr("Type a question...", "Escriba una pregunta..."); };
     const answer = (id, how) => { say(ANSWERS[id](), "z"); track("ask_zuzu", { intent: id, how: how }); };
     const open = (on) => {

@@ -57,7 +57,7 @@
         grid = grid.map((_, i) => d[i * 4 + 3] > 120 ? "#" + [d[i * 4], d[i * 4 + 1], d[i * 4 + 2]].map(v => v.toString(16).padStart(2, "0")).join("") : null);
         paint(); msg("Here's Zuzu. Now change her into a brand-new friend!", "Aquí está Zuzu. ¡Ahora conviértala en un amigo nuevo!");
       };
-      img.src = "assets/zuzu-sitting-pix.png";
+      img.src = "assets/sprites/zuzu-sit.png";
     });
 
     const picture = () => {

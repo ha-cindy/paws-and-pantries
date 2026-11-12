@@ -128,9 +128,9 @@ footer { margin-top: 40px; font-size: 14px; color: var(--ink-2); }
 .brand-zuzu { width: 44px; height: auto; margin: -6px 0 -4px -4px; }
 .tip { align-items: center; }
 .section.tip { flex-direction: row; }
-.tip-zuzu { width: 58px; height: auto; flex-shrink: 0; }
+.tip-zuzu { width: 72px; height: auto; flex-shrink: 0; }
 .perch { margin-top: 84px !important; }
-.perch-zuzu { position: absolute; right: 18px; top: -66px; width: 104px; height: auto; }
+.perch-zuzu { position: absolute; right: 18px; top: -58px; width: 96px; height: auto; }
 
 /* work-in-progress banner */
 .wip { background: var(--ink); color: #FFFFFF; font-size: 15px; }
@@ -192,7 +192,7 @@ img.pix { image-rendering: pixelated; }
 .win { max-width: 1060px; margin: 22px auto; background: var(--chrome); border: 2px solid; border-color: var(--chrome-hi) var(--chrome-dk) var(--chrome-dk) var(--chrome-hi); box-shadow: 6px 6px 0 rgba(46,45,51,.35); }
 .titlebar { display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 6px; background: linear-gradient(90deg, #2E2D33, #8E8D96); color: #FFFFFF; }
 .tb-home { flex: 1; display: flex; align-items: center; gap: 8px; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 14px; min-width: 0; }
-.tb-home img { width: 22px; height: auto; background: #FFFFFF; border-radius: 2px; flex-shrink: 0; }
+.tb-home img { width: 20px; height: auto; background: #FFFFFF; border-radius: 2px; flex-shrink: 0; }
 .tb-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tb-btns { display: flex; gap: 2px; }
 .tb-btns span { width: 20px; height: 18px; background: var(--chrome); color: var(--ink); font: 800 12px/14px var(--body); text-align: center; border-width: 1.5px; }
@@ -272,8 +272,8 @@ main h2::after { content: ""; display: block; width: 64px; height: 6px; margin-t
 .tip { background: #FFFFFF; border: 2px solid var(--ink); }
 .tip p::first-line { }
 .perch { margin-top: 70px !important; }
-.perch-zuzu { width: 110px; top: -60px; }
-.tip-zuzu { width: 56px; }
+.perch-zuzu { width: 96px; top: -56px; }
+.tip-zuzu { width: 48px; }
 .meet-zuzu { width: 72px; }
 .fact { border-radius: 0; background: var(--butter); border: 2px solid var(--ink); }
 .site-foot img { width: 52px; }
@@ -459,7 +459,7 @@ main h2 { font-family: var(--display); font-weight: 700; }
 .taskbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; height: 42px; display: flex; align-items: center; gap: 4px; padding: 3px 4px; background: var(--chrome); border-top: 2px solid var(--chrome-hi); box-shadow: 0 -1px 0 var(--chrome-dk); font-size: 14px; }
 .taskbar .start, .taskbar .task { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px; background: var(--chrome); color: var(--ink); font: 800 14px var(--body); text-decoration: none; border: 2px solid; border-color: var(--chrome-hi) var(--chrome-dk) var(--chrome-dk) var(--chrome-hi); box-shadow: var(--raised); white-space: nowrap; }
 .taskbar .start { font-family: var(--pixel); font-size: 16px; }
-.taskbar .start img { width: 26px; height: auto; }
+.taskbar .start img { width: 20px; height: auto; }
 .taskbar .task { font-weight: 700; }
 .taskbar .task img { width: 20px; height: auto; background: #fff; }
 .taskbar .on, .taskbar .start.on { background: #EDECEF; border-color: var(--chrome-dk) var(--chrome-hi) var(--chrome-hi) var(--chrome-dk); box-shadow: inset 1px 1px 0 var(--chrome-lo); }
@@ -587,3 +587,11 @@ main h2 { font-family: var(--display); font-weight: 700; }
 .hero .me img { width: clamp(120px, 24vw, 210px); height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%; border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink); border-radius: 10px; }
 @media (prefers-reduced-motion: reduce) { .v-img.in { transition: none; } }
 @media (max-width: 600px) { .v-stage { height: min(60vh, 420px); } .v-play { min-width: 0; } .v-tools { flex-wrap: wrap; } }
+
+/* desktop Zuzu */
+.pet { position: fixed; left: 0; bottom: 46px; z-index: 91; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; will-change: transform; }
+.pet img { width: 96px; height: 72px; display: block; image-rendering: pixelated; filter: drop-shadow(0 2px 0 rgba(0,0,0,.35)); }
+.pet:focus-visible { outline: 3px solid var(--butter); }
+.pet.hop img { animation: hop .45s ease; }
+@keyframes hop { 30% { transform: translateY(-14px); } 60% { transform: translateY(0); } 80% { transform: translateY(-5px); } }
+@media (max-width: 600px) { .pet { bottom: 32px; } .pet img { width: 64px; height: 48px; } }

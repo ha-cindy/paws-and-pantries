@@ -28,7 +28,7 @@
     const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     root.innerHTML = `
       <div class="viewer">
-        <div class="v-bar"><img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="16" height="16"><span class="v-title">zuzu_album.jpg</span><span class="v-count" aria-live="polite"></span></div>
+        <div class="v-bar"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16"><span class="v-title">zuzu_album.jpg</span><span class="v-count" aria-live="polite"></span></div>
         <div class="v-stage"><button type="button" class="v-nav v-prev" aria-label="Previous photo">&#9664;</button><img class="v-img" alt=""><button type="button" class="v-nav v-next" aria-label="Next photo">&#9654;</button></div>
         <p class="v-cap" aria-live="polite"></p>
         <div class="v-tools"><button type="button" class="menu-btn v-play"></button><div class="v-thumbs" role="tablist" aria-label="Photos"></div></div>

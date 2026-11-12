@@ -106,7 +106,7 @@
     // title-bar buttons
     const dlg = document.createElement("div");
     dlg.className = "dlg"; dlg.hidden = true;
-    dlg.innerHTML = '<div class="dlg-box" role="dialog" aria-modal="true" aria-labelledby="dlgT"><div class="dlg-bar"><span id="dlgT">zuzu.bmp</span></div><div class="dlg-body"><img class="pix" src="assets/zuzu-sitting-pix.png" alt="" width="64" height="68"><p id="dlgP"></p></div><div class="dlg-btns"><button type="button" class="btn light" id="dlgOk">OK</button></div></div>';
+    dlg.innerHTML = '<div class="dlg-box" role="dialog" aria-modal="true" aria-labelledby="dlgT"><div class="dlg-bar"><span id="dlgT">zuzu.bmp</span></div><div class="dlg-body"><img class="pix" src="assets/sprites/zuzu-sit.png" alt="" width="72" height="84"><p id="dlgP"></p></div><div class="dlg-btns"><button type="button" class="btn light" id="dlgOk">OK</button></div></div>';
     document.body.appendChild(dlg);
     const closeDlg = () => { dlg.hidden = true; document.querySelector('[data-win="close"]').focus(); };
     dlg.addEventListener("click", (e) => { if (e.target === dlg) closeDlg(); });
