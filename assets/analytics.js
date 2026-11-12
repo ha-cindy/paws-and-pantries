@@ -18,11 +18,12 @@
   document.addEventListener("click", function (e) {
     const a = e.target.closest && e.target.closest("a");
     if (!a) return;
-    const card = a.closest("article");
-    const place = card && card.querySelector("h3") ? card.querySelector("h3").textContent.trim() : "";
-    if (a.href.startsWith("tel:")) window.ppTrack("tap_call", { place: place });
-    else if (a.href.includes("google.com/maps")) window.ppTrack("tap_directions", { place: place });
-    else if (card && a.target === "_blank") window.ppTrack("tap_website", { place: place });
+    const card = a.closest("article, .place-card");
+    const place = a.dataset.place || (card && card.querySelector("h3") ? card.querySelector("h3").textContent.trim() : "");
+    const area = a.closest(".azu") ? "ask_zuzu" : a.closest(".place-card") ? "map_card" : card ? "list" : "page";
+    if (a.href.startsWith("tel:")) window.ppTrack("tap_call", { place: place, area: area });
+    else if (a.href.includes("google.com/maps")) window.ppTrack("tap_directions", { place: place, area: area });
+    else if (card && a.target === "_blank") window.ppTrack("tap_website", { place: place, area: area });
   });
 
   // Count every click on a link or button, so GA4 shows what people actually use.

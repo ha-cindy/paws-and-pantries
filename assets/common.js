@@ -71,4 +71,5 @@ const PP = {
     this.apply();
   },
 };
+window.PP = PP;
 document.addEventListener("DOMContentLoaded", () => PP.init());
