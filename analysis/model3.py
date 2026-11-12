@@ -6,7 +6,8 @@ from sklearn.cluster import KMeans
 from scipy.cluster.hierarchy import linkage, fcluster
 
 d = pd.read_csv(sys.argv[1])
-d["food_insecure_people"] = (d.food_insecure_2023 / 100 * d.population_2024).round(-2).astype(int)
+# official 2023 counts from each county's NJ Office of the Food Security Advocate chart book (Map the Meal Gap)
+d["food_insecure_people"] = d.food_insecure_people_2023.astype(int)
 feats = ["food_insecure_2023", "poverty_pct", "limited_food_access_pct", "unemployment_2024"]
 z = StandardScaler().fit_transform(d[feats])
 d["need_score"] = (z.mean(axis=1) * 10 + 50).round(1)   # 50 = NJ county average

@@ -8,7 +8,7 @@
     urban: { en: "Cities: very high numbers", es: "Ciudades: muchísimas personas",
       den: "Food stores are close, but rates and counts are high. Essex alone has about 123,000 food-insecure people.", des: "Las tiendas están cerca, pero las tasas y los números son altos. Solo Essex tiene unas 123,000 personas con inseguridad alimentaria." },
     other: { en: "Lower rates, still many people", es: "Tasas más bajas, todavía muchas personas",
-      den: "Below-average rates, but large counties still have big numbers. Middlesex has about 92,600 food-insecure people.", des: "Tasas bajo el promedio, pero los condados grandes tienen números altos. Middlesex tiene unas 92,600 personas con inseguridad alimentaria." },
+      den: "Below-average rates, but large counties still have big numbers. Middlesex has about 89,800 food-insecure people.", des: "Tasas bajo el promedio, pero los condados grandes tienen números altos. Middlesex tiene unas 89,800 personas con inseguridad alimentaria." },
   };
   let data = null, sel = "Middlesex", view = "score";
   const PET_BREAKS = [3000, 6000, 10000, 15000];

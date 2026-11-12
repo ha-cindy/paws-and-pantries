@@ -13,7 +13,7 @@ Live site: https://ha-cindy.github.io/paws-and-pantries/
 ## Data and methods
 
 - `data/resources.json`: listings. Local listings are added only after a phone or email check.
-- `data/counties.json`: NJ county need score and groups. Built by `analysis/model3.py` (standardized average of food insecurity, poverty, limited food access, unemployment; k-means checked against hierarchical clustering) from `analysis/nj_counties.csv`; `analysis/model3.R` reproduces it exactly in R, which comes from the NJ Office of the Food Security Advocate's Dec 2025 chart book.
+- `data/counties.json`: NJ county need score and groups. Built by `analysis/model3.py` (standardized average of food insecurity, poverty, limited food access, unemployment; k-means checked against hierarchical clustering) from `analysis/nj_counties.csv`; `analysis/model3.R` reproduces it exactly in R, which comes from the NJ Office of the Food Security Advocate's Dec 2025 chart book. Food-insecure head counts are the official 2023 figures from each county's chart book (Feeding America Map the Meal Gap), not rate times population.
 - `data/wait.json`: length-of-stay regression for adopted cats and dogs at the Austin Animal Center (Oct 2013 to Jul 2024). Built by `analysis/build_stays.py` and `analysis/model1.py`; `analysis/model1.R` reproduces the key results in R.
 - County shapes: US Census county boundaries via the plotly/datasets GeoJSON.
 
