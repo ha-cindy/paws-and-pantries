@@ -1,0 +1,221 @@
+{
+ "method": "Model 5: 2027 pet-food need, by NJ county (scenario projection, not a forecast with error bars).\nInputs: Map the Meal Gap food-insecurity rates for 2020 and 2023 (NJ Office of the Food Security Advocate,\nDec 2025 chart book) and official 2023 counts. 2020 was held down by pandemic relief, so the full\n2020-23 rise is not a trend to extend. Two scenarios:\n  steady : 2023 rate holds through 2027\n  rising : rate keeps rising at half the 2020-23 yearly pace for 4 more years\nPet households = people / 2.6 * 47% (same as model 4). Population held at 2023 levels.",
+ "totals": {
+  "pet_hh_2027_steady": 188000,
+  "pet_hh_2027_rising": 209300,
+  "food_insecure_people_2023": 1040460,
+  "people_2027_rising": 1157290
+ },
+ "counties": [
+  {
+   "county": "Essex",
+   "rate_2020": 12.3,
+   "food_insecure_2023": 14.0,
+   "rate_2027_rising": 15.1,
+   "food_insecure_people_2023": 119930,
+   "people_2027_rising": 129350,
+   "pet_hh_2027_steady": 21700,
+   "pet_hh_2027_rising": 23400
+  },
+  {
+   "county": "Hudson",
+   "rate_2020": 12.2,
+   "food_insecure_2023": 14.9,
+   "rate_2027_rising": 16.7,
+   "food_insecure_people_2023": 105780,
+   "people_2027_rising": 118560,
+   "pet_hh_2027_steady": 19100,
+   "pet_hh_2027_rising": 21400
+  },
+  {
+   "county": "Bergen",
+   "rate_2020": 7.9,
+   "food_insecure_2023": 9.8,
+   "rate_2027_rising": 11.1,
+   "food_insecure_people_2023": 93390,
+   "people_2027_rising": 105780,
+   "pet_hh_2027_steady": 16900,
+   "pet_hh_2027_rising": 19100
+  },
+  {
+   "county": "Middlesex",
+   "rate_2020": 8.4,
+   "food_insecure_2023": 10.4,
+   "rate_2027_rising": 11.7,
+   "food_insecure_people_2023": 89810,
+   "people_2027_rising": 101040,
+   "pet_hh_2027_steady": 16200,
+   "pet_hh_2027_rising": 18300
+  },
+  {
+   "county": "Ocean",
+   "rate_2020": 9.8,
+   "food_insecure_2023": 11.1,
+   "rate_2027_rising": 12.0,
+   "food_insecure_people_2023": 71680,
+   "people_2027_rising": 77490,
+   "pet_hh_2027_steady": 13000,
+   "pet_hh_2027_rising": 14000
+  },
+  {
+   "county": "Passaic",
+   "rate_2020": 12.0,
+   "food_insecure_2023": 13.6,
+   "rate_2027_rising": 14.7,
+   "food_insecure_people_2023": 70720,
+   "people_2027_rising": 76440,
+   "pet_hh_2027_steady": 12800,
+   "pet_hh_2027_rising": 13800
+  },
+  {
+   "county": "Camden",
+   "rate_2020": 10.9,
+   "food_insecure_2023": 12.7,
+   "rate_2027_rising": 13.9,
+   "food_insecure_people_2023": 66570,
+   "people_2027_rising": 72860,
+   "pet_hh_2027_steady": 12000,
+   "pet_hh_2027_rising": 13200
+  },
+  {
+   "county": "Union",
+   "rate_2020": 8.3,
+   "food_insecure_2023": 10.9,
+   "rate_2027_rising": 12.6,
+   "food_insecure_people_2023": 62360,
+   "people_2027_rising": 72090,
+   "pet_hh_2027_steady": 11300,
+   "pet_hh_2027_rising": 13000
+  },
+  {
+   "county": "Monmouth",
+   "rate_2020": 7.8,
+   "food_insecure_2023": 9.2,
+   "rate_2027_rising": 10.1,
+   "food_insecure_people_2023": 59420,
+   "people_2027_rising": 65230,
+   "pet_hh_2027_steady": 10700,
+   "pet_hh_2027_rising": 11800
+  },
+  {
+   "county": "Morris",
+   "rate_2020": 6.4,
+   "food_insecure_2023": 8.5,
+   "rate_2027_rising": 9.9,
+   "food_insecure_people_2023": 43620,
+   "people_2027_rising": 50800,
+   "pet_hh_2027_steady": 7900,
+   "pet_hh_2027_rising": 9200
+  },
+  {
+   "county": "Mercer",
+   "rate_2020": 8.3,
+   "food_insecure_2023": 11.1,
+   "rate_2027_rising": 13.0,
+   "food_insecure_people_2023": 42480,
+   "people_2027_rising": 49750,
+   "pet_hh_2027_steady": 7700,
+   "pet_hh_2027_rising": 9000
+  },
+  {
+   "county": "Burlington",
+   "rate_2020": 7.1,
+   "food_insecure_2023": 9.2,
+   "rate_2027_rising": 10.6,
+   "food_insecure_people_2023": 42550,
+   "people_2027_rising": 49020,
+   "pet_hh_2027_steady": 7700,
+   "pet_hh_2027_rising": 8900
+  },
+  {
+   "county": "Atlantic",
+   "rate_2020": 15.1,
+   "food_insecure_2023": 13.3,
+   "rate_2027_rising": 13.3,
+   "food_insecure_people_2023": 36660,
+   "people_2027_rising": 36660,
+   "pet_hh_2027_steady": 6600,
+   "pet_hh_2027_rising": 6600
+  },
+  {
+   "county": "Somerset",
+   "rate_2020": 5.7,
+   "food_insecure_2023": 8.2,
+   "rate_2027_rising": 9.9,
+   "food_insecure_people_2023": 28440,
+   "people_2027_rising": 34340,
+   "pet_hh_2027_steady": 5100,
+   "pet_hh_2027_rising": 6200
+  },
+  {
+   "county": "Gloucester",
+   "rate_2020": 8.2,
+   "food_insecure_2023": 9.9,
+   "rate_2027_rising": 11.0,
+   "food_insecure_people_2023": 30270,
+   "people_2027_rising": 33630,
+   "pet_hh_2027_steady": 5500,
+   "pet_hh_2027_rising": 6100
+  },
+  {
+   "county": "Cumberland",
+   "rate_2020": 12.1,
+   "food_insecure_2023": 14.8,
+   "rate_2027_rising": 16.6,
+   "food_insecure_people_2023": 22580,
+   "people_2027_rising": 25330,
+   "pet_hh_2027_steady": 4100,
+   "pet_hh_2027_rising": 4600
+  },
+  {
+   "county": "Sussex",
+   "rate_2020": 7.6,
+   "food_insecure_2023": 8.9,
+   "rate_2027_rising": 9.8,
+   "food_insecure_people_2023": 12860,
+   "people_2027_rising": 14160,
+   "pet_hh_2027_steady": 2300,
+   "pet_hh_2027_rising": 2600
+  },
+  {
+   "county": "Warren",
+   "rate_2020": 8.9,
+   "food_insecure_2023": 10.5,
+   "rate_2027_rising": 11.6,
+   "food_insecure_people_2023": 11550,
+   "people_2027_rising": 12760,
+   "pet_hh_2027_steady": 2100,
+   "pet_hh_2027_rising": 2300
+  },
+  {
+   "county": "Cape May",
+   "rate_2020": 12.5,
+   "food_insecure_2023": 12.3,
+   "rate_2027_rising": 12.3,
+   "food_insecure_people_2023": 11710,
+   "people_2027_rising": 11710,
+   "pet_hh_2027_steady": 2100,
+   "pet_hh_2027_rising": 2100
+  },
+  {
+   "county": "Hunterdon",
+   "rate_2020": 5.5,
+   "food_insecure_2023": 7.3,
+   "rate_2027_rising": 8.5,
+   "food_insecure_people_2023": 9510,
+   "people_2027_rising": 11070,
+   "pet_hh_2027_steady": 1700,
+   "pet_hh_2027_rising": 2000
+  },
+  {
+   "county": "Salem",
+   "rate_2020": 11.7,
+   "food_insecure_2023": 13.2,
+   "rate_2027_rising": 14.2,
+   "food_insecure_people_2023": 8570,
+   "people_2027_rising": 9220,
+   "pet_hh_2027_steady": 1500,
+   "pet_hh_2027_rising": 1700
+  }
+ ]
+}
