@@ -13,13 +13,13 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=21">
-<script src="assets/analytics.js?v=21"></script>
-<script src="assets/common.js?v=21" defer></script>
-<script src="assets/desktop.js?v=21" defer></script>
-<script src="assets/paint.js?v=21" defer></script>
-<script src="assets/pet.js?v=21" defer></script>
-<script src="assets/wait.js?v=21" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=22">
+<script src="assets/analytics.js?v=22"></script>
+<script src="assets/common.js?v=22" defer></script>
+<script src="assets/desktop.js?v=22" defer></script>
+<script src="assets/paint.js?v=22" defer></script>
+<script src="assets/pet.js?v=22" defer></script>
+<script src="assets/wait.js?v=22" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -53,7 +53,7 @@
 
   <section class="section chart-card" aria-labelledby="barsH">
     <h2 id="barsH"></h2>
-    <p class="muted" data-en="Each bar compares two pets that are alike in every other way (age, sex, health, how they arrived, and year). The thin lines show the 95% confidence range, so a short line means I'm more sure." data-es="Cada barra compara dos mascotas iguales en todo lo demás (edad, sexo, salud, cómo llegaron y año). Las líneas delgadas muestran el rango de confianza del 95%, así que una línea corta significa más seguridad.">Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range.</p>
+    <p class="muted" data-en="Each bar compares two pets that are alike in every other way (age, sex, health, how they arrived, and year). The thin lines show the 95% confidence range, so a short line means I'm more sure." data-es="Cada barra compara dos mascotas iguales en todo lo demás (edad, sexo, salud, cómo llegaron y año). Las líneas delgadas muestran el intervalo de confianza del 95%, así que una línea corta significa más seguridad.">Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range.</p>
     <div class="bars" id="bars"></div>
   </section>
 
@@ -65,7 +65,7 @@
 
   <section class="section chart-card" aria-labelledby="tryH">
     <h2 id="tryH" data-en="Predict a pet's wait" data-es="Prediga la espera de una mascota">Predict a pet's wait</h2>
-    <p class="muted" data-en="Describe a pet and the model will guess how long it might wait to be adopted. Try Zuzu: a young female cat, surrendered by her owner. Then try a senior pit bull and see what changes." data-es="Describa una mascota y el modelo calculará cuánto podría esperar para ser adoptada. Pruebe con Zuzu: una gata joven, entregada por su dueño. Luego pruebe un pit bull mayor y vea qué cambia.">Describe a pet and the model will guess how long it might wait to be adopted. Try Zuzu: a young female cat, surrendered by her owner. Then try a senior pit bull and see what changes.</p>
+    <p class="muted" data-en="Describe a pet and the model will guess how long it might wait to be adopted. Try Zuzu: a young female cat, surrendered by her owner. Then try a senior pit bull and see what changes." data-es="Describa una mascota y el modelo calculará cuánto podría esperar para ser adoptada. Pruebe con Zuzu: una gata joven, entregada por su dueño. Luego pruebe con un pit bull mayor y vea qué cambia.">Describe a pet and the model will guess how long it might wait to be adopted. Try Zuzu: a young female cat, surrendered by her owner. Then try a senior pit bull and see what changes.</p>
     <p class="chip-label" data-en="Age" data-es="Edad">Age</p>
     <div class="chips" role="group" aria-label="Age" id="ageChips"></div>
     <p class="chip-label" data-en="Looks and sex" data-es="Aspecto y sexo">Looks and sex</p>
@@ -77,7 +77,7 @@
       <p class="muted small" id="resultNote"></p>
       <p class="flag" id="flag" hidden></p>
     </div>
-    <p class="muted small" data-en="This is a Texas-based estimate, not a promise. It's meant to help shelters decide which pets need extra promotion, never to decide which pets get a chance." data-es="Es una estimación basada en Texas, no una promesa. Sirve para que los refugios decidan qué mascotas necesitan más promoción, nunca para decidir cuáles reciben una oportunidad.">This is a Texas-based estimate, not a promise. It's meant to help shelters decide which pets need extra promotion, never to decide which pets get a chance.</p>
+    <p class="muted small" data-en="This is a Texas-based estimate, not a promise. It's meant to help shelters decide which pets need extra promotion, never to decide which pets get a chance." data-es="Es una estimación basada en datos de Texas, no una promesa. Sirve para que los refugios decidan qué mascotas necesitan más promoción, nunca para decidir cuáles reciben una oportunidad.">This is a Texas-based estimate, not a promise. It's meant to help shelters decide which pets need extra promotion, never to decide which pets get a chance.</p>
   </section>
 
   <section class="section chart-card" aria-labelledby="hoH">
@@ -89,11 +89,11 @@
   <section class="section limits">
     <h2 data-en="What this can't tell you" data-es="Lo que esto no puede decirle">What this can't tell you</h2>
     <ul>
-      <li data-en="It ranks pets well but can't call the exact day. On pets it had never seen, flagged &quot;slowest 20%&quot; dogs waited 42 days versus 18 for the rest, yet only 42% of day estimates landed within a factor of two." data-es="Ordena bien a las mascotas, pero no adivina el día exacto. Con mascotas que nunca vio, los perros marcados como &quot;20% más lento&quot; esperaron 42 días contra 18 del resto, pero solo el 42% de las estimaciones quedó dentro del doble o la mitad.">It ranks pets well but can't call the exact day. On pets it had never seen, flagged "slowest 20%" dogs waited 42 days versus 18 for the rest, yet only 42% of day estimates landed within a factor of two.</li>
+      <li data-en="It ranks pets well but can't call the exact day. On pets it had never seen, flagged &quot;slowest 20%&quot; dogs waited 42 days versus 18 for the rest, yet only 42% of day estimates landed within a factor of two." data-es="Ordena bien a las mascotas, pero no adivina el día exacto. Con mascotas que nunca vio, los perros marcados en el &quot;20% que más espera&quot; esperaron 42 días contra 18 del resto, pero solo el 42% de las estimaciones quedó dentro del doble o la mitad.">It ranks pets well but can't call the exact day. On pets it had never seen, flagged "slowest 20%" dogs waited 42 days versus 18 for the rest, yet only 42% of day estimates landed within a factor of two.</li>
       <li data-en="It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted." data-es="Viene de un refugio de Texas, así que los de Nueva Jersey pueden ser distintos. Solo cuenta mascotas que fueron adoptadas.">It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted.</li>
-      <li data-en="It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors." data-es="Muestra patrones, no causas. Una gata mayor no espera más por ser peor. Menos personas buscan mascotas mayores.">It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors.</li>
+      <li data-en="It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors." data-es="Muestra patrones, no causas. Una gata mayor no espera más por ser peor. Simplemente, menos personas buscan mascotas mayores.">It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors.</li>
       <li data-en="It should never be used to decide which pets get a chance. I built it to show who needs extra attention." data-es="Nunca debe usarse para decidir qué mascotas reciben una oportunidad. Lo hice para mostrar quién necesita más atención.">It should never be used to decide which pets get a chance. I built it to show who needs extra attention.</li>
-      <li data-en="The famous black cat bias is real here, but small next to age and breed." data-es="El famoso prejuicio contra los gatos negros es real aquí, pero pequeño comparado con la edad y la raza.">The famous black cat bias is real here, but small next to age and breed.</li>
+      <li data-en="The famous black cat bias is real here, but small next to age and breed." data-es="El famoso prejuicio contra los gatos negros aparece aquí, pero es pequeño comparado con la edad y la raza.">The famous black cat bias is real here, but small next to age and breed.</li>
     </ul>
     <p class="muted small" id="src"></p>
   </section>

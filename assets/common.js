@@ -20,11 +20,11 @@ const T = {
     report: "Something wrong with a listing?", report_link: "Tell us",
   },
   es: {
-    nav_help: "Ayuda", nav_need: "Necesidad", nav_wait: "Esperan", nav_about: "Info", nav_club: "Club",
+    nav_help: "Ayuda", nav_need: "Necesidad", nav_wait: "En espera", nav_about: "Sobre mí", nav_club: "Club",
     big: "A+ Letra grande", lang: "English",
     hi_zuzu: "hola, soy Zuzu",
     help_h1: "Ayuda para las mascotas y las personas que las quieren.",
-    help_lede: "Comida para mascotas gratis y atención veterinaria de bajo costo en el condado de Middlesex, NJ. Sin registro, sin costo, sin trampa.",
+    help_lede: "Comida para mascotas gratis y atención veterinaria de bajo costo en el condado de Middlesex, NJ. Sin registro, sin costo, sin letra pequeña.",
     search_label: "Pueblo o código postal", search_btn: "Buscar",
     f_all: "Todo", f_food: "Comida para mascotas", f_vet: "Veterinario", f_spay: "Esterilización",
     local_h: "Cerca de usted", statewide_h: "Programas en todo Nueva Jersey",

@@ -13,13 +13,13 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=21">
-<script src="assets/analytics.js?v=21"></script>
-<script src="assets/common.js?v=21" defer></script>
-<script src="assets/desktop.js?v=21" defer></script>
-<script src="assets/paint.js?v=21" defer></script>
-<script src="assets/pet.js?v=21" defer></script>
-<script src="assets/need.js?v=21" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=22">
+<script src="assets/analytics.js?v=22"></script>
+<script src="assets/common.js?v=22" defer></script>
+<script src="assets/desktop.js?v=22" defer></script>
+<script src="assets/paint.js?v=22" defer></script>
+<script src="assets/pet.js?v=22" defer></script>
+<script src="assets/need.js?v=22" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -41,14 +41,14 @@
 <header class="hero">
   <div class="wrap">
     <h1 style="margin-top:18px" data-en="Where New Jersey needs the most help" data-es="Dónde Nueva Jersey necesita más ayuda">Where New Jersey needs the most help</h1>
-    <p class="lede" style="margin-top:10px;max-width:40em" data-en="I combined four public measures into one need score for each county, then grouped the counties that look alike. A score of 50 is the New Jersey average. Middlesex, where I live, comes in a little under that, but it still has one of the biggest headcounts in the state." data-es="Combiné cuatro medidas públicas en un puntaje de necesidad por condado y luego agrupé los condados parecidos. Un puntaje de 50 es el promedio de Nueva Jersey. Middlesex, donde vivo, queda un poco por debajo, pero sigue teniendo una de las cifras de personas más altas del estado.">I combined four public measures into one need score for each county, then grouped the counties that look alike. A score of 50 is the New Jersey average. Middlesex, where I live, comes in a little under that, but it still has one of the biggest headcounts in the state.</p>
+    <p class="lede" style="margin-top:10px;max-width:40em" data-en="I combined four public measures into one need score for each county, then grouped the counties that look alike. A score of 50 is the New Jersey average. Middlesex, where I live, comes in a little under that, but it still has one of the biggest headcounts in the state." data-es="Combiné cuatro medidas públicas en un puntaje de necesidad por condado y luego agrupé los condados parecidos. Un puntaje de 50 es el promedio de Nueva Jersey. Middlesex, donde vivo, queda un poco por debajo, pero tiene una de las cantidades más altas de personas con necesidad en todo el estado.">I combined four public measures into one need score for each county, then grouped the counties that look alike. A score of 50 is the New Jersey average. Middlesex, where I live, comes in a little under that, but it still has one of the biggest headcounts in the state.</p>
   </div>
 </header>
 
 <main class="wrap">
   <section class="section chart-card" aria-labelledby="mapH">
     <h2 id="mapH" data-en="Where pets and people need help most" data-es="Dónde más necesitan ayuda las mascotas y las personas">Where pets and people need help most</h2>
-    <p class="muted" data-en="Tap or hover on a county to see its numbers. Darker means more." data-es="Toque o pase el cursor sobre un condado para ver sus datos. Más oscuro significa más.">Tap or hover on a county to see its numbers. Darker means more.</p>
+    <p class="muted" data-en="Tap or hover on a county to see its numbers. Darker means more." data-es="Toque o pase el cursor sobre un condado para ver sus datos. Cuanto más oscuro, más necesidad.">Tap or hover on a county to see its numbers. Darker means more.</p>
     <div class="chips" role="group" aria-label="Map view">
       <button class="chip" type="button" data-view="score" aria-pressed="true" data-en="Need score" data-es="Puntaje de necesidad">Need score</button>
       <button class="chip" type="button" data-view="pets" aria-pressed="false" data-en="Pet households in need (est.)" data-es="Hogares con mascotas en necesidad (est.)">Pet households in need (est.)</button>
@@ -65,7 +65,7 @@
 
   <section class="section chart-card" aria-labelledby="pnH">
     <h2 id="pnH" data-en="Predicted demand: pet households facing hunger" data-es="Demanda estimada: hogares con mascotas que pasan hambre">Predicted demand: pet households facing hunger</h2>
-    <p class="muted" data-en="Nobody counts pets by county, which surprised me, so I estimated it myself. As far as I can tell, this is the first county-by-county estimate of pet food need in New Jersey." data-es="Nadie cuenta mascotas por condado, lo que me sorprendió, así que lo estimé yo misma. Hasta donde sé, es la primera estimación condado por condado de la necesidad de comida para mascotas en Nueva Jersey.">Nobody counts pets by county, which surprised me, so I estimated it myself. As far as I can tell, this is the first county-by-county estimate of pet food need in New Jersey.</p>
+    <p class="muted" data-en="Nobody counts pets by county, which surprised me, so I estimated it myself. As far as I can tell, this is the first county-by-county estimate of pet food need in New Jersey." data-es="Me sorprendió que nadie cuente las mascotas por condado, así que hice la estimación yo misma. Hasta donde sé, es la primera estimación condado por condado de la necesidad de comida para mascotas en Nueva Jersey.">Nobody counts pets by county, which surprised me, so I estimated it myself. As far as I can tell, this is the first county-by-county estimate of pet food need in New Jersey.</p>
     <div id="petNeed"></div>
   </section>
 
@@ -100,7 +100,7 @@
 
   <section class="section">
     <h2 data-en="How I made this" data-es="Cómo lo hice">How I made this</h2>
-    <p data-en="The need score averages four standardized measures: food insecurity (2023), poverty (2019 to 2023), the share of people with limited access to healthy food (2019), and unemployment (2024). The groups come from k-means clustering, checked against hierarchical clustering, which gave nearly the same groups." data-es="El puntaje promedia cuatro medidas estandarizadas: inseguridad alimentaria (2023), pobreza (2019 a 2023), la parte de la población con acceso limitado a comida saludable (2019) y desempleo (2024). Los grupos vienen de un análisis de conglomerados k-means, comprobado con un análisis jerárquico que dio casi los mismos grupos.">The need score averages four standardized measures: food insecurity (2023), poverty (2019 to 2023), the share of people with limited access to healthy food (2019), and unemployment (2024). The groups come from k-means clustering, checked against hierarchical clustering, which gave nearly the same groups.</p>
+    <p data-en="The need score averages four standardized measures: food insecurity (2023), poverty (2019 to 2023), the share of people with limited access to healthy food (2019), and unemployment (2024). The groups come from k-means clustering, checked against hierarchical clustering, which gave nearly the same groups." data-es="El puntaje promedia cuatro medidas estandarizadas: inseguridad alimentaria (2023), pobreza (2019 a 2023), el porcentaje de la población con acceso limitado a comida saludable (2019) y desempleo (2024). Los grupos vienen de un análisis de conglomerados k-means, comprobado con un análisis jerárquico que dio casi los mismos grupos.">The need score averages four standardized measures: food insecurity (2023), poverty (2019 to 2023), the share of people with limited access to healthy food (2019), and unemployment (2024). The groups come from k-means clustering, checked against hierarchical clustering, which gave nearly the same groups.</p>
     <p class="muted small" data-en="Limits: county numbers hide big differences between towns, and no public data shows pet ownership by county." data-es="Límites: los datos por condado esconden grandes diferencias entre pueblos, y no hay datos públicos de mascotas por condado.">Limits: county numbers hide big differences between towns, and no public data shows pet ownership by county.</p>
     <p class="muted small" id="sources"></p>
   </section>

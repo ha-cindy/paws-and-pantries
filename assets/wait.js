@@ -71,7 +71,7 @@
     nEl.textContent = es() ? `La mitad de las mascotas parecidas se fueron a casa entre ${lo} y ${hi} días.` : `Half of similar pets went home within ${lo} to ${hi} days.`;
     if (fEl) {
       fEl.hidden = !p.slow;
-      fEl.textContent = es() ? "Entre el 20% más lento. Si usted trabaja en un refugio: ¡destaque primero a esta mascota!" : "In the slowest 20%. If you work at a shelter: feature this pet first!";
+      fEl.textContent = es() ? "Está entre el 20% que más espera. Si trabaja en un refugio, ¡destaque a esta mascota primero!" : "In the slowest 20%. If you work at a shelter: feature this pet first!";
     }
     try { window.ppTrack && window.ppTrack("wait_predict", { species: sp, age: age, slow: p.slow ? "yes" : "no" }); } catch (e) { /* ignore */ }
   }
@@ -84,8 +84,8 @@
     el.innerHTML = `
       <div class="ho-stats">
         <div><b>${n(s.n_test)}</b><span>${es() ? `${pet} de 2023 a 2024 que el modelo nunca vio` : `${pet} from 2023 to 2024 the model never saw`}</span></div>
-        <div><b>${s.flag_median_days} ${es() ? "días" : "days"}</b><span>${es() ? `espera mediana de los que marcó como "20% más lento", contra ${s.rest_median_days} días para el resto` : `median wait for pets it flagged as the "slowest 20%", vs ${s.rest_median_days} days for the rest`}</span></div>
-        <div><b>${Math.round(s.flag_precision_pct)}%</b><span>${es() ? "de los marcados realmente estuvieron en el quinto más lento (el azar daría 20%)" : "of flagged pets really were in the slowest fifth (chance would be 20%)"}</span></div>
+        <div><b>${s.flag_median_days} ${es() ? "días" : "days"}</b><span>${es() ? `espera mediana de las que marcó en el "20% que más espera", contra ${s.rest_median_days} días para el resto` : `median wait for pets it flagged as the "slowest 20%", vs ${s.rest_median_days} days for the rest`}</span></div>
+        <div><b>${Math.round(s.flag_precision_pct)}%</b><span>${es() ? "de las marcadas de verdad estuvieron en el 20% que más esperó (al azar sería 20%)" : "of flagged pets really were in the slowest fifth (chance would be 20%)"}</span></div>
         <div><b>${Math.round(s.within_2x_pct)}%</b><span>${es() ? "de las predicciones quedaron dentro del doble o la mitad de la espera real. Ordena bien, pero no adivina el día exacto." : "of predictions landed within double or half the real wait. It ranks well, but can't call the exact day."}</span></div>
       </div>
       <p class="muted small" style="margin-top:10px">${es() ? "Predicho / real, en días, por grupo de predicción (grupo 1 = predicción más corta). Barras amarillas = predicho, grises = real." : "Predicted / actual days by prediction group (group 1 = shortest predicted). Yellow bars = predicted, gray = actual."}</p>

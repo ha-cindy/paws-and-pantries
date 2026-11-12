@@ -73,7 +73,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const here = (location.pathname.split("/").pop() || "index.html");
-    const LINKS = [["./", "Find help", "Ayuda", "index.html"], ["need.html", "NJ need", "Necesidad en NJ", "need.html"], ["wait.html", "Pets who wait", "Mascotas que esperan", "wait.html"], ["club.html", "Zuzu's Club", "El Club de Zuzu", "club.html"], ["about.html", "About", "Acerca de", "about.html"]];
+    const LINKS = [["./", "Find help", "Ayuda", "index.html"], ["need.html", "NJ need", "Necesidad en NJ", "need.html"], ["wait.html", "Pets who wait", "Mascotas que esperan", "wait.html"], ["club.html", "Zuzu's Club", "El Club de Zuzu", "club.html"], ["about.html", "About", "Sobre mí", "about.html"]];
 
     const bar = document.createElement("div");
     bar.className = "taskbar"; bar.setAttribute("role", "region"); bar.setAttribute("aria-label", "Taskbar");

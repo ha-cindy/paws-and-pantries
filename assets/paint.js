@@ -81,10 +81,10 @@
 
     canvas.addEventListener("pointerdown", (e) => {
       if (tool === "bucket") {
-        if (lum(color) < 0.55) { say("That color is too dark to read on. Try a lighter one!", "Ese color es muy oscuro para leer. ¡Pruebe uno más claro!"); return; }
+        if (lum(color) < 0.55) { say("That color is too dark to read on. Try a lighter one!", "Con ese color no se podría leer el texto. ¡Pruebe uno más claro!"); return; }
         paper.style.setProperty("--hero-bg", color);
         paper.classList.remove("filled"); void paper.offsetWidth; paper.classList.add("filled");
-        say("Splash! Header refilled.", "¡Splash! Encabezado rellenado.");
+        say("Splash! Header refilled.", "¡Splash! Encabezado pintado.");
         track("paint_fill", { color: color });
         setTool("select");
         return;
