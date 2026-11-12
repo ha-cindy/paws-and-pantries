@@ -9,11 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=12">
-<script src="assets/analytics.js?v=12"></script>
-<script src="assets/common.js?v=12" defer></script>
-<script src="assets/club.js?v=12" defer></script>
-<script src="assets/paint.js?v=12" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=13">
+<script src="assets/analytics.js?v=13"></script>
+<script src="assets/common.js?v=13" defer></script>
+<script src="assets/quiz.js?v=13" defer></script>
+<script src="assets/club.js?v=13" defer></script>
+<script src="assets/desktop.js?v=13" defer></script>
+<script src="assets/paint.js?v=13" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -79,6 +81,15 @@
     <h2 id="galH" data-en="Zuzu's friends" data-es="Los amigos de Zuzu">Zuzu's friends</h2>
     <div class="gallery" id="gallery"></div>
     <p class="muted small"><span data-en="Your gallery is saved only on this device. Want your friend featured here for everyone? Save the picture and email it to" data-es="Su galería se guarda solo en este dispositivo. ¿Quiere que su amigo aparezca aquí para todos? Guarde la imagen y envíela a">Your gallery is saved only on this device. Want your friend featured here for everyone? Save the picture and email it to</span> <a href="mailto:cindy.ha@rutgers.edu?subject=A%20friend%20for%20Zuzu">cindy.ha@rutgers.edu</a>.</p>
+  </section>
+
+  <section class="section quiz" id="quiz" aria-labelledby="quizH">
+    <div class="quiz-bar"><span>quiz.exe</span><span aria-hidden="true">?</span></div>
+    <div class="quiz-in">
+      <h2 id="quizH" data-en="Quiz: who waits longer?" data-es="Quiz: ¿quién espera más?">Quiz: who waits longer?</h2>
+      <p class="muted" data-en="Five quick questions. The answers come from my model of about 75,000 real shelter adoptions." data-es="Cinco preguntas rápidas. Las respuestas vienen de mi modelo de unas 75,000 adopciones reales.">Five quick questions. The answers come from my model of about 75,000 real shelter adoptions.</p>
+      <div id="quizBody"></div>
+    </div>
   </section>
 
   <section class="section" aria-labelledby="adoptH">
