@@ -33,7 +33,7 @@
 
   function chips() {
     document.getElementById("ageChips").innerHTML = AGES.map(a => `<button class="chip" type="button" data-age="${a[0]}" aria-pressed="${a[0] === age}">${esc(es() ? a[2] : a[1])}</button>`).join("");
-    const T = [["black", "Black coat", "Pelaje negro"], ["female", "Female", "Hembra"], ["intact", "Not yet fixed", "Sin esterilizar"]];
+    const T = [["black", "Black coat", "Pelaje negro"], ["female", "Female", "Hembra"], ["intact", "Not yet fixed", "Sin esterilizar ni castrar"]];
     if (sp === "dog") T.push(["pit_type", "Pit bull type", "Tipo pit bull"]);
     const S = [["intake", "stray", "Came in as a stray", "Llegó como callejero"], ["intake", "surrender", "Surrendered by owner", "Entregado por su dueño"], ["cond", "normal", "Healthy", "Sano"], ["cond", "sick", "Sick or injured", "Enfermo o herido"]];
     const sEl = document.getElementById("storyChips");

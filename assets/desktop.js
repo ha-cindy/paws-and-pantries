@@ -12,7 +12,7 @@
   // The four big chips people see first, then two smaller ones.
   const INTENTS = [
     { id: "food", en: "Pet food near me", es: "Comida para mascotas cerca", kw: ["food", "hungry", "feed", "pantry", "kibble", "comida", "aliment", "despensa", "hambre"], town: true },
-    { id: "spay", en: "Low-cost spay or neuter", es: "Esterilizar a bajo costo", kw: ["spay", "neuter", "fix", "esteriliz", "castr"], town: true },
+    { id: "spay", en: "Low-cost spay or neuter", es: "Esterilizar o castrar a bajo costo", kw: ["spay", "neuter", "fix", "esteriliz", "castr"], town: true },
     { id: "now", en: "I need help today", es: "Necesito ayuda hoy", kw: ["today", "now", "help", "emergency", "urgent", "211", "person", "human", "hoy", "ahora", "ayuda", "emergencia", "urgente", "persona"] },
     { id: "adopt", en: "Adopt", es: "Adoptar", kw: ["adopt", "shelter", "rescue", "kitten", "puppy", "refugio", "rescate", "gatito", "perrito", "cachorro"], town: true },
     { id: "vet", en: "Vet care", es: "Veterinario", kw: ["vet", "sick", "shot", "vaccin", "rabies", "doctor", "hurt", "veterin", "vacuna", "enferm", "rabia"], small: true },
@@ -46,12 +46,12 @@
   };
   const LEAD = {
     food: ["Closest pet food help to", "La ayuda con comida para mascotas más cerca de"],
-    spay: ["Vets in New Jersey's $10 spay and neuter program, closest to", "Veterinarios del programa de esterilización de $10 de Nueva Jersey, más cerca de"],
+    spay: ["Vets in New Jersey's $10 spay and neuter program, closest to", "Veterinarios del programa de esterilización y castración de $10 de Nueva Jersey, más cerca de"],
     adopt: ["Shelters and rescues closest to", "Refugios y rescates más cerca de"],
   };
   const ALL = {
     food: ["Here's every pet food spot I know:", "Estos son todos los lugares con comida para mascotas que conozco:"],
-    spay: ["Here are all the vets I know in New Jersey's $10 spay and neuter program:", "Estos son todos los veterinarios que conozco del programa de esterilización de $10 de Nueva Jersey:"],
+    spay: ["Here are all the vets I know in New Jersey's $10 spay and neuter program:", "Estos son todos los veterinarios que conozco del programa de esterilización y castración de $10 de Nueva Jersey:"],
     adopt: ["Here are all the shelters and rescues I know, A to Z:", "Estos son todos los refugios y rescates que conozco, en orden alfabético:"],
   };
   const TAIL = {
@@ -61,7 +61,7 @@
   };
   const ANSWERS = {
     now: () => `<p>${tr("Call", "Llame al")} ${tel("211")} ${tr("from any phone, or text your ZIP code to 898211. NJ 2-1-1 has real people on the line, 24/7, and they know about pet food too.", "desde cualquier teléfono, o mande su código postal por texto al 898211. En NJ 2-1-1 contestan personas de verdad, 24/7, y también saben de comida para mascotas.")}</p><p class="azu-note">${tr("If your pet is hurt or sick right now, call the nearest animal hospital first.", "Si su mascota está herida o enferma ahora mismo, llame primero al hospital veterinario más cercano.")}</p>`,
-    vet: () => `<p>${tr("Two low-cost options:", "Dos opciones de bajo costo:")}</p><ul><li>${tr("Free rabies shots: Middlesex County towns hold free clinics. Call", "Vacunas gratis contra la rabia: los pueblos del condado de Middlesex hacen clínicas gratis. Llame al")} ${tel("732-745-3100")}.</li><li>${tr("$10 spay or neuter if you get SNAP, Medicaid, SSI, or Lifeline. Tap \"Low-cost spay or neuter\" below.", "Esterilización por $10 si recibe SNAP, Medicaid, SSI o Lifeline. Toque \"Esterilizar a bajo costo\" abajo.")}</li></ul><p class="azu-note">${tr("If your pet is hurt or sick right now, call the nearest animal hospital.", "Si su mascota está herida o enferma ahora mismo, llame al hospital veterinario más cercano.")}</p>`,
+    vet: () => `<p>${tr("Two low-cost options:", "Dos opciones de bajo costo:")}</p><ul><li>${tr("Free rabies shots: Middlesex County towns hold free clinics. Call", "Vacunas gratis contra la rabia: los pueblos del condado de Middlesex hacen clínicas gratis. Llame al")} ${tel("732-745-3100")}.</li><li>${tr("$10 spay or neuter if you get SNAP, Medicaid, SSI, or Lifeline. Tap \"Low-cost spay or neuter\" below.", "Esterilización o castración por $10 si recibe SNAP, Medicaid, SSI o Lifeline. Toque \"Esterilizar o castrar a bajo costo\" abajo.")}</li></ul><p class="azu-note">${tr("If your pet is hurt or sick right now, call the nearest animal hospital.", "Si su mascota está herida o enferma ahora mismo, llame al hospital veterinario más cercano.")}</p>`,
     about: () => `<p>${tr("Cindy made this! She's a grad student at Rutgers, and I'm her very chatty shelter cat. I mostly supervise from the bed.", "¡Cindy hizo esto! Es estudiante de posgrado en Rutgers, y yo soy su gata de refugio, bastante habladora. Más que nada superviso desde la cama.")}</p><p><a href="about.html#story">${tr("Read our story", "Lea nuestra historia")}</a></p>`,
     unknown: () => `<p>${tr("I'm a pixel cat, not a genius. Try one of these:", "Soy una gata de píxeles, no una genia. Pruebe una de estas:")}</p>`,
   };

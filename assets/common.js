@@ -26,7 +26,7 @@ const T = {
     help_h1: "Ayuda para las mascotas y las personas que las quieren.",
     help_lede: "Comida para mascotas gratis y atención veterinaria de bajo costo en el condado de Middlesex, NJ. Sin registro, sin costo, sin letra pequeña.",
     search_label: "Pueblo o código postal", search_btn: "Buscar",
-    f_all: "Todo", f_food: "Comida para mascotas", f_vet: "Veterinario", f_spay: "Esterilización",
+    f_all: "Todo", f_food: "Comida para mascotas", f_vet: "Veterinario", f_spay: "Esterilizar o castrar",
     local_h: "Cerca de usted", statewide_h: "Programas en todo Nueva Jersey",
     checking_h: "Los lugares locales están en el mapa.",
     checking_p: "Por ahora vienen de listas oficiales del condado y del estado (anoto la fecha en que revisé cada una). Desde diciembre, yo misma llamo y escribo a cada lugar para confirmar horarios y a quién ayudan. Mientras tanto, ¡llame antes de ir!",
