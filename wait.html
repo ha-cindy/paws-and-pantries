@@ -8,13 +8,17 @@
 <meta name="theme-color" content="#2E2D33">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=14">
-<script src="assets/analytics.js?v=14"></script>
-<script src="assets/common.js?v=14" defer></script>
-<script src="assets/desktop.js?v=14" defer></script>
-<script src="assets/paint.js?v=14" defer></script>
-<script src="assets/wait.js?v=14" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=15">
+<script src="assets/analytics.js?v=15"></script>
+<script src="assets/common.js?v=15" defer></script>
+<script src="assets/desktop.js?v=15" defer></script>
+<script src="assets/paint.js?v=15" defer></script>
+<script src="assets/wait.js?v=15" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -36,7 +40,7 @@
 <header class="hero">
   <div class="wrap">
     <h1 style="margin-top:18px" data-en="Which shelter pets wait the longest?" data-es="¿Qué mascotas esperan más en el refugio?">Which shelter pets wait the longest?</h1>
-    <p class="lede" style="margin-top:10px;max-width:40em" data-en="Every pet we keep at home is one less in a crowded shelter. Here's who waits longest once they're there, from about 75,000 adoptions at the Austin Animal Center (2013 to 2024)." data-es="Cada mascota que se queda en casa es una menos en un refugio lleno. Esto muestra quién espera más una vez allí, según unas 75,000 adopciones en el Austin Animal Center (2013 a 2024).">Every pet we keep at home is one less in a crowded shelter. Here's who waits longest once they're there, from about 75,000 adoptions at the Austin Animal Center (2013 to 2024).</p>
+    <p class="lede" style="margin-top:10px;max-width:40em" data-en="Zuzu waited at a shelter before I found her, and I kept wondering who waits longest. So I looked at about 75,000 real adoptions from the Austin Animal Center (2013 to 2024). Here's what the data says." data-es="Zuzu esperó en un refugio antes de que yo la encontrara, y me quedé pensando quién espera más. Así que revisé unas 75,000 adopciones reales del Austin Animal Center (2013 a 2024). Esto es lo que dicen los datos.">Zuzu waited at a shelter before I found her, and I kept wondering who waits longest. So I looked at about 75,000 real adoptions from the Austin Animal Center (2013 to 2024). Here's what the data says.</p>
   </div>
 </header>
 
@@ -48,19 +52,19 @@
 
   <section class="section chart-card" aria-labelledby="barsH">
     <h2 id="barsH"></h2>
-    <p class="muted" data-en="Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range." data-es="Comparado con una mascota parecida, con todo lo demás igual (edad, sexo, salud, cómo llegó y año). Las líneas muestran el rango de confianza del 95%.">Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range.</p>
+    <p class="muted" data-en="Each bar compares two pets that are alike in every other way (age, sex, health, how they arrived, and year). The thin lines show the 95% confidence range, so a short line means I'm more sure." data-es="Cada barra compara dos mascotas iguales en todo lo demás (edad, sexo, salud, cómo llegaron y año). Las líneas delgadas muestran el rango de confianza del 95%, así que una línea corta significa más seguridad.">Compared with a similar pet, holding everything else equal (age, sex, health, how they arrived, and year). Lines show the 95% confidence range.</p>
     <div class="bars" id="bars"></div>
   </section>
 
   <section class="section card" aria-labelledby="howH">
     <h2 id="howH" data-en="How to read this" data-es="Cómo leer esto">How to read this</h2>
     <p data-en="Each bar compares two pets who are the same in every way the shelter recorded, except one thing. &quot;+113%&quot; for senior cats means a senior cat waited a bit more than twice as long as a young adult cat who was otherwise alike." data-es="Cada barra compara dos mascotas iguales en todo lo que el refugio registró, menos una cosa. &quot;+113%&quot; para gatos mayores significa que un gato mayor esperó un poco más del doble que un gato adulto joven parecido en todo lo demás.">Each bar compares two pets who are the same in every way the shelter recorded, except one thing. "+113%" for senior cats means a senior cat waited a bit more than twice as long as a young adult cat who was otherwise alike.</p>
-    <p data-en="The thin line on each bar is the range the real answer most likely falls in. A short line means we can be more sure." data-es="La línea delgada en cada barra es el rango donde probablemente está la respuesta real. Una línea corta significa más seguridad.">The thin line on each bar is the range the real answer most likely falls in. A short line means we can be more sure.</p>
+    <p data-en="The thin line on each bar is the range the real answer most likely falls in. A short line means I can be more sure." data-es="La línea delgada en cada barra es el rango donde probablemente está la respuesta real. Una línea corta significa que puedo estar más segura.">The thin line on each bar is the range the real answer most likely falls in. A short line means I can be more sure.</p>
   </section>
 
   <section class="section chart-card" aria-labelledby="tryH">
     <h2 id="tryH" data-en="Predict a pet's wait" data-es="Prediga la espera de una mascota">Predict a pet's wait</h2>
-    <p class="muted" data-en="Describe a pet and the model estimates how long it might wait to be adopted, based on about 75,000 real adoptions." data-es="Describa una mascota y el modelo estima cuánto podría esperar para ser adoptada, según unas 75,000 adopciones reales.">Describe a pet and the model estimates how long it might wait to be adopted, based on about 75,000 real adoptions.</p>
+    <p class="muted" data-en="Describe a pet and the model will guess how long it might wait to be adopted. Try Zuzu: a young female cat, surrendered by her owner. Then try a senior pit bull and see what changes." data-es="Describa una mascota y el modelo calculará cuánto podría esperar para ser adoptada. Pruebe con Zuzu: una gata joven, entregada por su dueño. Luego pruebe un pit bull mayor y vea qué cambia.">Describe a pet and the model will guess how long it might wait to be adopted. Try Zuzu: a young female cat, surrendered by her owner. Then try a senior pit bull and see what changes.</p>
     <p class="chip-label" data-en="Age" data-es="Edad">Age</p>
     <div class="chips" role="group" aria-label="Age" id="ageChips"></div>
     <p class="chip-label" data-en="Looks and sex" data-es="Aspecto y sexo">Looks and sex</p>
@@ -77,7 +81,7 @@
 
   <section class="section chart-card" aria-labelledby="hoH">
     <h2 id="hoH" data-en="Does it actually work? The test" data-es="¿De verdad funciona? La prueba">Does it actually work? The test</h2>
-    <p class="muted" data-en="I trained the model on adoptions from 2014 to 2022, then asked it to predict 2023 and 2024, which it had never seen. Here's how it did." data-es="Entrené el modelo con adopciones de 2014 a 2022 y luego le pedí predecir 2023 y 2024, que nunca había visto. Así le fue.">I trained the model on adoptions from 2014 to 2022, then asked it to predict 2023 and 2024, which it had never seen. Here's how it did.</p>
+    <p class="muted" data-en="A model that only explains the past isn't worth much. So I trained it on adoptions from 2014 to 2022, then made it predict 2023 and 2024, which it had never seen. Here's how it did." data-es="Un modelo que solo explica el pasado no sirve de mucho. Así que lo entrené con adopciones de 2014 a 2022 y lo hice predecir 2023 y 2024, que nunca había visto. Así le fue.">A model that only explains the past isn't worth much. So I trained it on adoptions from 2014 to 2022, then made it predict 2023 and 2024, which it had never seen. Here's how it did.</p>
     <div id="holdout"></div>
   </section>
 
@@ -95,7 +99,7 @@
   <footer class="site-foot">
     <img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="64" height="48">
     <div>
-      <p data-en="Made by Cindy Ha (and Zuzu). An independent student project at Rutgers Business School, not an official Rutgers service." data-es="Hecho por Cindy Ha (y Zuzu). Un proyecto estudiantil independiente de Rutgers Business School, no un servicio oficial de Rutgers.">Made by Cindy Ha (and Zuzu). An independent student project at Rutgers Business School, not an official Rutgers service.</p>
+      <p data-en="Made by Cindy Ha, with moral support from Zuzu. This is my own student project at Rutgers Business School, not an official Rutgers service." data-es="Hecho por Cindy Ha, con el apoyo moral de Zuzu. Es mi propio proyecto estudiantil en Rutgers Business School, no un servicio oficial de Rutgers.">Made by Cindy Ha, with moral support from Zuzu. This is my own student project at Rutgers Business School, not an official Rutgers service.</p>
       <p><span data-i18n="report">Something wrong with a listing?</span> <a href="about.html#report" data-i18n="report_link">Tell us</a>.</p>
     </div>
   </footer>

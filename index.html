@@ -8,16 +8,20 @@
 <meta name="theme-color" content="#2E2D33">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/vendor/leaflet.css">
-<link rel="stylesheet" href="assets/style.css?v=14">
-<script src="assets/analytics.js?v=14"></script>
-<script src="assets/common.js?v=14" defer></script>
-<script src="assets/desktop.js?v=14" defer></script>
-<script src="assets/paint.js?v=14" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=15">
+<script src="assets/analytics.js?v=15"></script>
+<script src="assets/common.js?v=15" defer></script>
+<script src="assets/desktop.js?v=15" defer></script>
+<script src="assets/paint.js?v=15" defer></script>
 <script src="assets/vendor/leaflet.js" defer></script>
-<script src="assets/map.js?v=14" defer></script>
-<script src="assets/help.js?v=14" defer></script>
+<script src="assets/map.js?v=15" defer></script>
+<script src="assets/help.js?v=15" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -78,7 +82,7 @@
       <span><i style="background:#E8B320"></i><span data-en="Zuzu's shelter" data-es="El refugio de Zuzu">Zuzu's shelter</span></span>
       <span class="muted" id="mapCount"></span>
     </div>
-    <p class="muted small" data-en="Pins marked &quot;from an official list&quot; come from county and state lists. I'll confirm each one directly starting December 2026. Until then, call before you go." data-es="Los marcadores que dicen &quot;de una lista oficial&quot; vienen de listas del condado y del estado. Confirmaré cada uno directamente a partir de diciembre de 2026. Mientras tanto, llame antes de ir.">Pins marked "from an official list" come from county and state lists. I'll confirm each one directly starting December 2026. Until then, call before you go.</p>
+    <p class="muted small" data-en="Pins marked &quot;from an official list&quot; are exactly that: I found them on county and state lists but haven't called yet. That starts in December. Until then, call before you go." data-es="son exactamente eso: los encontré en listas del condado y del estado, pero todavía no he llamado. Eso empieza en diciembre. Mientras tanto, llame antes de ir.">Pins marked "from an official list" are exactly that: I found them on county and state lists but haven't called yet. That starts in December. Until then, call before you go.</p>
   </section>
 
   <section class="section" aria-labelledby="localH">
@@ -109,8 +113,8 @@
 
   <section class="section card hello">
     <h2 data-en="Who's behind this?" data-es="¿Quién está detrás de esto?">Who's behind this?</h2>
-    <p data-en="Hi! I'm Cindy, a grad student at Rutgers, and Zuzu is my very chatty shelter cat. Paws & Pantries is my solo project to make pet help in New Jersey easier to find." data-es="¡Hola! Soy Cindy, estudiante de posgrado en Rutgers, y Zuzu es mi gata del refugio, muy habladora. Paws & Pantries es mi proyecto personal para que sea más fácil encontrar ayuda para mascotas en Nueva Jersey.">Hi! I'm Cindy, a grad student at Rutgers, and Zuzu is my very chatty shelter cat. Paws &amp; Pantries is my solo project to make pet help in New Jersey easier to find.</p>
-    <p><a class="btn ghost" href="about.html#story" data-en="Read our story" data-es="Lea nuestra historia">Read our story</a></p>
+    <p data-en="I'm Cindy, a grad student at Rutgers, and Zuzu is my very chatty shelter cat. I built this because finding pet help in New Jersey meant digging through a dozen PDFs, and nobody has time for that in a hard month." data-es="Soy Cindy, estudiante de posgrado en Rutgers, y Zuzu es mi gata del refugio, muy habladora. Hice esto porque encontrar ayuda para mascotas en Nueva Jersey significaba revisar una docena de PDFs, y nadie tiene tiempo para eso en un mes difícil.">I'm Cindy, a grad student at Rutgers, and Zuzu is my very chatty shelter cat. I built this because finding pet help in New Jersey meant digging through a dozen PDFs, and nobody has time for that in a hard month.</p>
+    <p><a class="btn ghost" href="about.html#story" data-en="Read our story (and Zuzu's)" data-es="Lea nuestra historia (y la de Zuzu)">Read our story (and Zuzu's)</a></p>
   </section>
 
   <section class="section card perch" aria-labelledby="helpfulH">
@@ -120,13 +124,13 @@
       <button class="chip" type="button" data-helpful="yes" data-en="Yes" data-es="Sí">Yes</button>
       <button class="chip" type="button" data-helpful="no" data-en="Not yet" data-es="Todavía no">Not yet</button>
     </div>
-    <p class="muted small" id="helpfulThanks" hidden data-en="Thank you! This tells us whether the site is working." data-es="¡Gracias! Esto nos dice si el sitio está funcionando.">Thank you! This tells us whether the site is working.</p>
+    <p class="muted small" id="helpfulThanks" hidden data-en="Thank you! Honestly, this is how I know whether the site is working." data-es="¡Gracias! La verdad, así es como sé si el sitio está funcionando.">Thank you! This tells us whether the site is working.</p>
   </section>
 
   <footer class="site-foot">
     <img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="64" height="48">
     <div>
-      <p data-en="Made by Cindy Ha (and Zuzu). An independent student project at Rutgers Business School, not an official Rutgers service." data-es="Hecho por Cindy Ha (y Zuzu). Un proyecto estudiantil independiente de Rutgers Business School, no un servicio oficial de Rutgers.">Made by Cindy Ha (and Zuzu). An independent student project at Rutgers Business School, not an official Rutgers service.</p>
+      <p data-en="Made by Cindy Ha, with moral support from Zuzu. This is my own student project at Rutgers Business School, not an official Rutgers service." data-es="Hecho por Cindy Ha, con el apoyo moral de Zuzu. Es mi propio proyecto estudiantil en Rutgers Business School, no un servicio oficial de Rutgers.">Made by Cindy Ha, with moral support from Zuzu. This is my own student project at Rutgers Business School, not an official Rutgers service.</p>
       <p><span data-i18n="report">Something wrong with a listing?</span> <a href="about.html#report" data-i18n="report_link">Tell us</a>.</p>
     </div>
   </footer>

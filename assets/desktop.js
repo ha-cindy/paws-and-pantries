@@ -24,7 +24,7 @@
     spay: () => `<p>${tr("New Jersey's program costs $10 if you get SNAP, Medicaid, SSI, or Lifeline, and $20 for pets adopted from a NJ shelter. Call one of these vets to book and bring your benefits ID:", "El programa de Nueva Jersey cuesta $10 si recibe SNAP, Medicaid, SSI o Lifeline, y $20 para mascotas adoptadas de un refugio de NJ. Llame a uno de estos veterinarios y traiga su identificación de beneficios:")}</p><ul>${list("spay")}</ul>`,
     adopt: () => `<p>${tr("These shelters and rescues are in Middlesex County:", "Estos refugios y rescates están en el condado de Middlesex:")}</p><ul>${list("adopt")}</ul><p>${tr("I came from SAVE in Skillman! Senior cats wait about twice as long, so say hi to the older pets first.", "¡Yo vine de SAVE en Skillman! Los gatos mayores esperan casi el doble, así que salude primero a las mascotas mayores.")}</p><p><a href="./#mapH">${tr("See shelters on the map", "Ver refugios en el mapa")}</a></p>`,
     person: () => `<p>${tr("Dial", "Marque")} ${tel("211")} ${tr("from any phone, or text your ZIP code to 898211. NJ 2-1-1 is a help line with real people, open 24/7.", "desde cualquier teléfono, o envíe su código postal por texto al 898211. NJ 2-1-1 es una línea de ayuda con personas reales, abierta 24/7.")}</p>`,
-    about: () => `<p>${tr("Cindy made this! She's a grad student at Rutgers, and I'm her very chatty shelter cat.", "¡Cindy hizo esto! Es estudiante de posgrado en Rutgers, y yo soy su gata de refugio, muy habladora.")}</p><p><a href="about.html#story">${tr("Read our story", "Lea nuestra historia")}</a></p>`,
+    about: () => `<p>${tr("Cindy made this! She's a grad student at Rutgers, and I'm her very chatty shelter cat. I mostly supervise from the bed.", "¡Cindy hizo esto! Es estudiante de posgrado en Rutgers, y yo soy su gata de refugio, muy habladora. Yo superviso desde la cama.")}</p><p><a href="about.html#story">${tr("Read our story", "Lea nuestra historia")}</a></p>`,
     unknown: () => `<p>${tr("Sorry, I only know a few things. Pick one below, or dial", "Perdón, solo sé algunas cosas. Elija una abajo o marque")} ${tel("211")} ${tr("to talk to a person.", "para hablar con una persona.")}</p>`,
   };
   const match = (text) => {
@@ -81,7 +81,7 @@
     const answer = (id, how) => { say(ANSWERS[id](), "z"); track("ask_zuzu", { intent: id, how: how }); };
     const open = (on) => {
       azu.hidden = !on; document.getElementById("azuTask").setAttribute("aria-pressed", on ? "true" : "false"); document.getElementById("azuTask").classList.toggle("on", on);
-      if (on && !log.children.length) { say(tr("Hi! I'm Zuzu. What does your pet need?", "¡Hola! Soy Zuzu. ¿Qué necesita su mascota?"), "z"); }
+      if (on && !log.children.length) { say(tr("Hi! I'm Zuzu. Cindy's busy, so you get me. What does your pet need?", "¡Hola! Soy Zuzu. Cindy está ocupada, así que le toca conmigo. ¿Qué necesita su mascota?"), "z"); }
       if (on) { quicks(); track("ask_zuzu_open", {}); }
     };
     document.getElementById("azuTask").addEventListener("click", () => open(azu.hidden));
