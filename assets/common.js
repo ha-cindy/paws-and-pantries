@@ -51,7 +51,7 @@ const ARIA_ES = {
   "Intake story": "Cómo llegó al refugio", "Filter by type": "Filtrar por tipo", "Drawing tools": "Herramientas de dibujo",
   "Drawing area": "Área de dibujo", "Choose cats or dogs": "Elija gatos o perros", "Age": "Edad", "Ask Zuzu": "Pregúntele a Zuzu",
   "Start menu": "Menú Inicio", "Taskbar": "Barra de tareas", "Next photo": "Foto siguiente", "Previous photo": "Foto anterior",
-  "Photos": "Fotos", "Type a question": "Escriba una pregunta",
+  "Photos": "Fotos", "Tip": "Consejo", "Type a question": "Escriba una pregunta",
 };
 const PP = {
   lang: "en",

@@ -156,7 +156,7 @@
     if (box && !seen) {
       box.classList.add("nudge");
       const tip = document.createElement("div");
-      tip.className = "tool-tip"; tip.setAttribute("role", "note");
+      tip.className = "tool-tip"; tip.setAttribute("role", "region"); tip.setAttribute("aria-label", "Tip");
       tip.innerHTML = `<img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><p></p><div class="tt-btns"><button type="button" class="menu-btn tt-try"></button><button type="button" class="menu-btn tt-x"></button></div>`;
       const fill = () => {
         tip.querySelector("p").textContent = L() === "es" ? "¡Psst! Estos botones de Paint funcionan de verdad. Tome el lápiz y dibuje en la página, o use la cubeta para pintar el encabezado." : "Psst! These Paint buttons really work. Grab the pencil and doodle on the page, or use the bucket to repaint the header.";
