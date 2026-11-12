@@ -1,4 +1,4 @@
-// Map of pet help in Middlesex County. Leaflet (vendored) + CARTO Voyager tiles (OpenStreetMap data).
+// Map of pet help in Middlesex County. Leaflet (vendored) + Esri World Street Map tiles.
 (function () {
   const TYPES = {
     food:  { color: "#F2932E", en: "Pet food", es: "Comida para mascotas", icon: '<path d="M3 12h18l-2 7H5z"/><path d="M7 12c0-3 2.2-5 5-5s5 2 5 5"/>' },
@@ -68,9 +68,9 @@
     if (!box || !window.L) return;
     map = L.map(box, { scrollWheelZoom: false, zoomControl: false, attributionControl: true }).setView([40.47, -74.40], 10);
     L.control.zoom({ position: "bottomright" }).addTo(map);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-      maxZoom: 18, subdomains: "abcd",
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+      maxZoom: 18,
+      attribution: 'Tiles &copy; Esri and its data providers, including OpenStreetMap contributors',
     }).addTo(map);
     map.on("click", () => { sel = null; draw(); });
     fetch("data/places.json").then(r => r.json()).then(d => {

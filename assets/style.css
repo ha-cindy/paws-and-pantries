@@ -447,3 +447,4 @@ main h2 { font-family: var(--display); font-weight: 700; }
 .friend img { width: 100%; height: auto; display: block; image-rendering: pixelated; }
 .friend .btn { min-height: 32px; font-size: 13px; padding: 0 10px; }
 .card h3 + p { margin-top: 2px; }
+.leaflet-tile-pane { filter: saturate(.85) brightness(1.04); }
