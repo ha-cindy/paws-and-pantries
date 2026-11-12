@@ -77,8 +77,8 @@
 
     const bar = document.createElement("div");
     bar.className = "taskbar";
-    bar.innerHTML = `<button type="button" class="start" id="startBtn" aria-haspopup="true" aria-expanded="false"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16"><span data-en="Start" data-es="Inicio">Start</span></button>
-      <span class="task on"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16"><span>zuzu.bmp</span></span>
+    bar.innerHTML = `<button type="button" class="start" id="startBtn" aria-haspopup="true" aria-expanded="false"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><span data-en="Start" data-es="Inicio">Start</span></button>
+      <span class="task on"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><span>zuzu.bmp</span></span>
       <button type="button" class="task" id="azuTask" aria-pressed="false"><span data-en="Ask Zuzu" data-es="Pregúntele a Zuzu">Ask Zuzu</span></button>
       <a class="task" href="club.html#quiz" data-track="taskbar quiz"><span data-en="Quiz" data-es="Quiz">Quiz</span></a>
       <span class="tb-space"></span><span class="clock" id="clock" aria-hidden="true"></span>`;
@@ -114,7 +114,7 @@
 
     // Ask Zuzu
     const log = document.getElementById("azuLog"), quick = document.getElementById("azuQuick"), input = document.getElementById("azuIn");
-    const say = (html, who) => { const d = document.createElement("div"); d.className = "azu-msg " + who; d.innerHTML = (who === "z" ? '<img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="20" height="16">' : "") + `<div>${html}</div>`; log.appendChild(d); log.scrollTop = who === "z" ? Math.max(0, d.offsetTop - 40) : log.scrollHeight; };
+    const say = (html, who) => { const d = document.createElement("div"); d.className = "azu-msg " + who; d.innerHTML = (who === "z" ? '<img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17">' : "") + `<div>${html}</div>`; log.appendChild(d); log.scrollTop = who === "z" ? Math.max(0, d.offsetTop - 40) : log.scrollHeight; };
     // state: "menu" (pick a need) or "town" (waiting for a town for `pending`)
     let mode = "menu", pending = null;
     const intentChips = () => {

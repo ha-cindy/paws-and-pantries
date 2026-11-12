@@ -12,7 +12,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const pet = document.createElement("button");
     pet.type = "button"; pet.className = "pet"; pet.hidden = true; pet.setAttribute("aria-label", "Zuzu");
-    pet.innerHTML = '<img class="pix" src="' + S + 'stand.png" alt="" width="32" height="24">';
+    pet.innerHTML = '<img class="pix" src="' + S + 'stand.png" alt="" width="32" height="22">';
     document.body.appendChild(pet);
     const img = pet.firstChild;
     let x = -120, dir = 1, busy = false, frameT = null, moveT = null, visits = 0;
