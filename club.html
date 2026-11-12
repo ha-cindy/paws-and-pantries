@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zuzu's Club: for people who love animals | Paws &amp; Pantries</title>
+<meta name="description" content="Draw Zuzu a friend, find a shelter pet to adopt, and see easy ways to help animals in Middlesex County, NJ.">
+<meta name="theme-color" content="#2E2D33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css?v=10">
+<script src="assets/analytics.js?v=10"></script>
+<script src="assets/common.js?v=10" defer></script>
+<script src="assets/club.js?v=10" defer></script>
+<script src="assets/paint.js?v=10" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
+<div class="win">
+<div class="titlebar"><a class="tb-home" href="./" aria-label="Paws and Pantries home"><img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="30" height="23"><span class="tb-title">zuzu.bmp - Paws &amp; Pantries</span></a><span class="tb-btns"><button type="button" data-win="min" aria-label="Minimize">_</button><button type="button" data-win="max" aria-label="Maximize">&#9633;</button><button type="button" data-win="close" aria-label="Close">x</button></span></div>
+<nav class="menubar" aria-label="Main">
+  <a class="menu-link" href="./" data-i18n="nav_help">Find help</a>
+  <a class="menu-link" href="need.html" data-i18n="nav_need">NJ need</a>
+  <a class="menu-link" href="wait.html" data-i18n="nav_wait">Pets who wait</a>
+  <a class="menu-link" href="club.html" aria-current="page" data-i18n="nav_club">Zuzu's Club</a>
+  <a class="menu-link" href="about.html" data-i18n="nav_about">About</a>
+<span class="mb-spacer"></span>
+        <button class="menu-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
+        <button class="menu-btn" id="langBtn" type="button" data-i18n="lang">Español</button>
+</nav>
+<div class="workspace">
+<div class="toolbox" role="toolbar" aria-label="Paint tools"><button type="button" class="tool on" data-tool="select" aria-label="Browse" title="Browse" aria-pressed="true" data-hint-en="Pointer: click around the site as usual" data-hint-es="Puntero: navegue el sitio como siempre"><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><path d="M5 2v14l4-4 3 6 2-1-3-6h5z" fill="#fff" stroke="#000" stroke-width="1.4"/></svg></button><button type="button" class="tool" data-tool="pencil" aria-label="Pencil" title="Pencil" aria-pressed="false" data-hint-en="Pencil: doodle on the page. Pick a color below." data-hint-es="Lápiz: dibuje en la página. Elija un color abajo."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="12" width="9" height="3" fill="#000" transform="rotate(-45 8 13)"/><rect x="2" y="15" width="3" height="3" fill="#000"/></svg></button><button type="button" class="tool" data-tool="brush" aria-label="Brush" title="Brush" aria-pressed="false" data-hint-en="Brush: a thicker doodle." data-hint-es="Pincel: un trazo más grueso."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><rect x="9" y="2" width="3" height="9" fill="#804000"/><rect x="7" y="11" width="7" height="6" fill="#000"/></svg></button><button type="button" class="tool" data-tool="spray" aria-label="Spray" title="Spray" aria-pressed="false" data-hint-en="Spray: tap to spray sparkles." data-hint-es="Aerosol: toque para rociar brillitos."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="6" width="7" height="11" fill="#000"/><rect x="8" y="3" width="3" height="3" fill="#000"/><rect x="2" y="3" width="1.5" height="1.5" fill="#000"/><rect x="4" y="1" width="1.5" height="1.5" fill="#000"/><rect x="1" y="6" width="1.5" height="1.5" fill="#000"/></svg></button><button type="button" class="tool" data-tool="bucket" aria-label="Fill" title="Fill" aria-pressed="false" data-hint-en="Paint bucket: tap to refill the header with your color." data-hint-es="Bote de pintura: toque para rellenar el encabezado con su color."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><path d="M4 9l6-6 6 6-6 6z" fill="none" stroke="#000" stroke-width="1.5"/><rect x="14" y="11" width="3" height="6" fill="#000"/></svg></button><button type="button" class="tool" data-tool="eraser" aria-label="Eraser" title="Eraser" aria-pressed="false" data-hint-en="Eraser: clears your doodles." data-hint-es="Borrador: borra sus dibujos."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="7" width="13" height="7" fill="#fff" stroke="#000" stroke-width="1.5"/><rect x="3" y="7" width="5" height="7" fill="#F4A9A8"/></svg></button><button type="button" class="tool" data-tool="text" aria-label="Text" title="Text" aria-pressed="false" data-hint-en="Text: switch between English and Spanish." data-hint-es="Texto: cambie entre inglés y español."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><text x="4" y="16" font-family="Times New Roman" font-weight="700" font-size="16" fill="#000">A</text></svg></button><button type="button" class="tool" data-tool="zoom" aria-label="Zoom" title="Zoom" aria-pressed="false" data-hint-en="Magnifier: bigger or smaller text." data-hint-es="Lupa: letra más grande o más pequeña."><svg width="16" height="16" viewBox="0 0 20 20" shape-rendering="crispEdges" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="#000" stroke-width="2"/><rect x="11" y="12" width="3" height="6" fill="#000" transform="rotate(-45 12 14)"/></svg></button><span class="tool-opt" aria-hidden="true"><i class="size s1 on"></i><i class="size s2"></i><i class="size s3"></i></span></div>
+<div class="well"><div class="paper"><canvas class="doodle" aria-hidden="true"></canvas>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-row">
+      <div>
+        <h1 data-en="Zuzu's Club" data-es="El Club de Zuzu">Zuzu's Club</h1>
+        <p class="lede" data-en="For people who love animals. Draw Zuzu a friend, meet shelter pets, and find small ways to help." data-es="Para quienes aman a los animales. Dibújele un amigo a Zuzu, conozca mascotas de refugio y encuentre formas sencillas de ayudar.">For people who love animals. Draw Zuzu a friend, meet shelter pets, and find small ways to help.</p>
+      </div>
+      <div class="zuzu"><img src="assets/zuzu.jpg" alt="Zuzu, a silver tabby cat, on her yellow bed" width="150" height="167"><span class="tag">hi, I'm Zuzu</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section chart-card studio" aria-labelledby="drawH">
+    <h2 id="drawH" data-en="Draw Zuzu a friend" data-es="Dibújele un amigo a Zuzu">Draw Zuzu a friend</h2>
+    <p class="muted" data-en="Zuzu is an only cat and very chatty. Draw her a friend, one pixel at a time, the way we did in old-school Paint." data-es="Zuzu es hija única y muy habladora. Dibújele un amigo, un píxel a la vez, como en el Paint de antes.">Zuzu is an only cat and very chatty. Draw her a friend, one pixel at a time, the way we did in old-school Paint.</p>
+    <div class="studio-row">
+      <div class="easel">
+        <canvas id="pix" width="320" height="320" aria-label="Drawing area"></canvas>
+      </div>
+      <div class="studio-side">
+        <div class="dtools" role="toolbar" aria-label="Drawing tools">
+          <button type="button" class="btn dtool on" data-d="pencil" aria-pressed="true" data-en="Pencil" data-es="Lápiz">Pencil</button>
+          <button type="button" class="btn dtool" data-d="fill" aria-pressed="false" data-en="Fill" data-es="Rellenar">Fill</button>
+          <button type="button" class="btn dtool" data-d="eraser" aria-pressed="false" data-en="Eraser" data-es="Borrador">Eraser</button>
+        </div>
+        <div class="dpal" role="group" aria-label="Colors"><button type="button" class="dsw on" data-c="#2E2D33" style="background:#2E2D33" aria-label="Color #2E2D33"></button><button type="button" class="dsw" data-c="#5E5C66" style="background:#5E5C66" aria-label="Color #5E5C66"></button><button type="button" class="dsw" data-c="#8E8D96" style="background:#8E8D96" aria-label="Color #8E8D96"></button><button type="button" class="dsw" data-c="#C9C8CE" style="background:#C9C8CE" aria-label="Color #C9C8CE"></button><button type="button" class="dsw" data-c="#FFFFFF" style="background:#FFFFFF" aria-label="Color #FFFFFF"></button><button type="button" class="dsw" data-c="#FFE07A" style="background:#FFE07A" aria-label="Color #FFE07A"></button><button type="button" class="dsw" data-c="#F2C230" style="background:#F2C230" aria-label="Color #F2C230"></button><button type="button" class="dsw" data-c="#C98415" style="background:#C98415" aria-label="Color #C98415"></button><button type="button" class="dsw" data-c="#F4A9A8" style="background:#F4A9A8" aria-label="Color #F4A9A8"></button><button type="button" class="dsw" data-c="#E98A8F" style="background:#E98A8F" aria-label="Color #E98A8F"></button><button type="button" class="dsw" data-c="#8B5A2B" style="background:#8B5A2B" aria-label="Color #8B5A2B"></button><button type="button" class="dsw" data-c="#F3E3C3" style="background:#F3E3C3" aria-label="Color #F3E3C3"></button><button type="button" class="dsw" data-c="#7FB08A" style="background:#7FB08A" aria-label="Color #7FB08A"></button><button type="button" class="dsw" data-c="#8FB8DE" style="background:#8FB8DE" aria-label="Color #8FB8DE"></button></div>
+        <div class="dtools">
+          <button type="button" class="btn" id="dStart" data-en="Start from Zuzu" data-es="Empezar con Zuzu">Start from Zuzu</button>
+          <button type="button" class="btn" id="dUndo" data-en="Undo" data-es="Deshacer">Undo</button>
+          <button type="button" class="btn" id="dClear" data-en="Clear" data-es="Limpiar">Clear</button>
+        </div>
+        <label class="dname"><span data-en="Your friend's name" data-es="Nombre de su amigo">Your friend's name</span>
+          <input id="dName" type="text" maxlength="20" placeholder="Mochi" autocomplete="off"></label>
+        <div class="dtools">
+          <button type="button" class="btn light" id="dSave" data-en="Add to my gallery" data-es="Agregar a mi galería">Add to my gallery</button>
+          <button type="button" class="btn" id="dDown" data-en="Save picture" data-es="Guardar imagen">Save picture</button>
+        </div>
+        <p class="muted small" id="dMsg" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="galH">
+    <h2 id="galH" data-en="Zuzu's friends" data-es="Los amigos de Zuzu">Zuzu's friends</h2>
+    <div class="gallery" id="gallery"></div>
+    <p class="muted small"><span data-en="Your gallery is saved only on this device. Want your friend featured here for everyone? Save the picture and email it to" data-es="Su galería se guarda solo en este dispositivo. ¿Quiere que su amigo aparezca aquí para todos? Guarde la imagen y envíela a">Your gallery is saved only on this device. Want your friend featured here for everyone? Save the picture and email it to</span> <a href="mailto:cindy.ha@rutgers.edu?subject=A%20friend%20for%20Zuzu">cindy.ha@rutgers.edu</a>.</p>
+  </section>
+
+  <section class="section" aria-labelledby="adoptH">
+    <h2 id="adoptH" data-en="Meet a shelter pet" data-es="Conozca una mascota de refugio">Meet a shelter pet</h2>
+    <div class="grid-2">
+      <div class="card dark"><p class="stat">1,424</p><p data-en="cats and dogs came into the three Middlesex County shelters that reported in 2025 (1,025 cats and 399 dogs)." data-es="gatos y perros llegaron en 2025 a los tres refugios del condado de Middlesex que reportaron (1,025 gatos y 399 perros).">cats and dogs came into the three Middlesex County shelters that reported in 2025 (1,025 cats and 399 dogs).</p></div>
+      <div class="card butter"><p class="stat">914</p><p data-en="of them were adopted (698 cats and 216 dogs). Another 240 went back home to their owners." data-es="fueron adoptados (698 gatos y 216 perros). Otros 240 regresaron a casa con sus dueños.">of them were adopted (698 cats and 216 dogs). Another 240 went back home to their owners.</p></div>
+    </div>
+    <p class="muted small"><span data-en="Source: NJ Department of Health, 2025 Animal Intake and Disposition survey (Edison, Old Bridge, and Perth Amboy shelters). The survey is voluntary, so other shelters are not counted." data-es="Fuente: Departamento de Salud de NJ, encuesta de ingreso y salida de animales 2025 (refugios de Edison, Old Bridge y Perth Amboy). La encuesta es voluntaria, así que otros refugios no están contados.">Source: NJ Department of Health, 2025 Animal Intake and Disposition survey (Edison, Old Bridge, and Perth Amboy shelters). The survey is voluntary, so other shelters are not counted.</span></p>
+    <div class="card">
+      <h3 data-en="Thinking about adopting?" data-es="¿Pensando en adoptar?">Thinking about adopting?</h3>
+      <p data-en="Six shelters and rescues in Middlesex County are on our map, plus SAVE, where Zuzu came from. Senior cats wait about twice as long as young ones, so if you can, say hi to the older pets first." data-es="Hay seis refugios y rescates del condado de Middlesex en nuestro mapa, además de SAVE, de donde vino Zuzu. Los gatos mayores esperan casi el doble que los jóvenes, así que, si puede, salude primero a las mascotas mayores.">Six shelters and rescues in Middlesex County are on our map, plus SAVE, where Zuzu came from. Senior cats wait about twice as long as young ones, so if you can, say hi to the older pets first.</p>
+      <p class="actions" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn light" href="./#mapH" data-en="See shelters on the map" data-es="Ver refugios en el mapa">See shelters on the map</a><a class="btn" href="wait.html" data-en="Which pets wait longest?" data-es="¿Qué mascotas esperan más?">Which pets wait longest?</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="helpH">
+    <h2 id="helpH" data-en="Small ways to help" data-es="Formas sencillas de ayudar">Small ways to help</h2>
+    <div class="grid-2">
+      <div class="card"><h3 data-en="Share a bag of pet food" data-es="Comparta una bolsa de comida">Share a bag of pet food</h3><p data-en="FISH, Inc. in Piscataway lists pet food as a donation it accepts. Call first: 732-356-0081." data-es="FISH, Inc. en Piscataway acepta donaciones de comida para mascotas. Llame primero: 732-356-0081.">FISH, Inc. in Piscataway lists pet food as a donation it accepts. Call first: 732-356-0081.</p><p class="muted small"><span data-en="Source: Middlesex County Food Assistance Directory, Jan 2026." data-es="Fuente: Directorio de Asistencia Alimentaria del condado de Middlesex, enero de 2026.">Source: Middlesex County Food Assistance Directory, Jan 2026.</span></p></div>
+      <div class="card"><h3 data-en="Free rabies shots" data-es="Vacunas gratis contra la rabia">Free rabies shots</h3><p data-en="Towns in Middlesex County hold free rabies clinics for dogs and cats, open to all New Jersey residents. Call 732-745-3100 for the next one." data-es="Los pueblos del condado de Middlesex ofrecen clínicas gratis contra la rabia para perros y gatos, abiertas a todos los residentes de Nueva Jersey. Llame al 732-745-3100 para la próxima.">Towns in Middlesex County hold free rabies clinics for dogs and cats, open to all New Jersey residents. Call 732-745-3100 for the next one.</p><p class="muted small"><span data-en="Source: Middlesex County rabies clinics page." data-es="Fuente: página de clínicas contra la rabia del condado de Middlesex.">Source: Middlesex County rabies clinics page.</span></p></div>
+      <div class="card"><h3 data-en="Tell a neighbor" data-es="Cuéntele a un vecino">Tell a neighbor</h3><p data-en="Know someone having a hard month? Send them this site, or tell them to dial 2-1-1. Help with pet food keeps pets at home." data-es="¿Conoce a alguien pasando un mes difícil? Envíele este sitio o dígale que marque 2-1-1. La ayuda con comida mantiene a las mascotas en casa.">Know someone having a hard month? Send them this site, or tell them to dial 2-1-1. Help with pet food keeps pets at home.</p></div>
+      <div class="card butter"><h3 data-en="Know a place we missed?" data-es="¿Conoce un lugar que nos falta?">Know a place we missed?</h3><p data-en="If a pantry, clinic, or rescue near you helps with pet food or low-cost care, tell me and I'll check it and add it." data-es="Si una despensa, clínica o rescate cerca de usted ayuda con comida o cuidado de bajo costo, avíseme y lo verifico y lo agrego.">If a pantry, clinic, or rescue near you helps with pet food or low-cost care, tell me and I'll check it and add it.</p><p><a class="btn" href="mailto:cindy.ha@rutgers.edu?subject=A%20place%20for%20Paws%20%26%20Pantries" data-en="Suggest a place" data-es="Sugerir un lugar">Suggest a place</a></p></div>
+    </div>
+  </section>
+  <footer class="site-foot">
+    <img class="pix" src="assets/zuzu-icon-pix.png" alt="" width="64" height="48">
+    <div>
+      <p data-en="Made by Cindy Ha (and Zuzu). An independent student project at Rutgers Business School, not an official Rutgers service." data-es="Hecho por Cindy Ha (y Zuzu). Un proyecto estudiantil independiente de Rutgers Business School, no un servicio oficial de Rutgers.">Made by Cindy Ha (and Zuzu). An independent student project at Rutgers Business School, not an official Rutgers service.</p>
+      <p><span data-i18n="report">Something wrong with a listing?</span> <a href="about.html#report" data-i18n="report_link">Tell us</a>.</p>
+    </div>
+  </footer>
+</main>
+</div></div>
+</div>
+<div class="palette" role="group" aria-label="Colors"><span class="fgbg" aria-hidden="true"><i id="fgSw" style="background:#F2C230"></i><b style="background:#FFFFFF"></b></span><span class="swatches"><button type="button" class="sw" data-color="#2E2D33" style="background:#2E2D33" aria-label="Color #2E2D33"></button><button type="button" class="sw" data-color="#4A4950" style="background:#4A4950" aria-label="Color #4A4950"></button><button type="button" class="sw" data-color="#5E5C66" style="background:#5E5C66" aria-label="Color #5E5C66"></button><button type="button" class="sw" data-color="#7A7982" style="background:#7A7982" aria-label="Color #7A7982"></button><button type="button" class="sw" data-color="#8E8D96" style="background:#8E8D96" aria-label="Color #8E8D96"></button><button type="button" class="sw" data-color="#A9A8B0" style="background:#A9A8B0" aria-label="Color #A9A8B0"></button><button type="button" class="sw" data-color="#C98415" style="background:#C98415" aria-label="Color #C98415"></button><button type="button" class="sw" data-color="#E8B320" style="background:#E8B320" aria-label="Color #E8B320"></button><button type="button" class="sw" data-color="#F2C230" style="background:#F2C230" aria-label="Color #F2C230"></button><button type="button" class="sw" data-color="#E98A8F" style="background:#E98A8F" aria-label="Color #E98A8F"></button><button type="button" class="sw" data-color="#C6C2B8" style="background:#C6C2B8" aria-label="Color #C6C2B8"></button><button type="button" class="sw" data-color="#9E9A90" style="background:#9E9A90" aria-label="Color #9E9A90"></button><button type="button" class="sw" data-color="#6E6A62" style="background:#6E6A62" aria-label="Color #6E6A62"></button><button type="button" class="sw" data-color="#3E3D44" style="background:#3E3D44" aria-label="Color #3E3D44"></button><button type="button" class="sw" data-color="#FFFFFF" style="background:#FFFFFF" aria-label="Color #FFFFFF"></button><button type="button" class="sw" data-color="#F3F2EF" style="background:#F3F2EF" aria-label="Color #F3F2EF"></button><button type="button" class="sw" data-color="#E4E2E6" style="background:#E4E2E6" aria-label="Color #E4E2E6"></button><button type="button" class="sw" data-color="#D9D8DC" style="background:#D9D8DC" aria-label="Color #D9D8DC"></button><button type="button" class="sw" data-color="#C9C8CE" style="background:#C9C8CE" aria-label="Color #C9C8CE"></button><button type="button" class="sw" data-color="#FFF8DC" style="background:#FFF8DC" aria-label="Color #FFF8DC"></button><button type="button" class="sw" data-color="#FFE07A" style="background:#FFE07A" aria-label="Color #FFE07A"></button><button type="button" class="sw" data-color="#FFEDA6" style="background:#FFEDA6" aria-label="Color #FFEDA6"></button><button type="button" class="sw" data-color="#FFF1B8" style="background:#FFF1B8" aria-label="Color #FFF1B8"></button><button type="button" class="sw" data-color="#F4A9A8" style="background:#F4A9A8" aria-label="Color #F4A9A8"></button><button type="button" class="sw" data-color="#FBF7EE" style="background:#FBF7EE" aria-label="Color #FBF7EE"></button><button type="button" class="sw" data-color="#EFEAE0" style="background:#EFEAE0" aria-label="Color #EFEAE0"></button><button type="button" class="sw" data-color="#DCD6CA" style="background:#DCD6CA" aria-label="Color #DCD6CA"></button><button type="button" class="sw" data-color="#B8B4BC" style="background:#B8B4BC" aria-label="Color #B8B4BC"></button></span></div>
+<div class="statusbar"><span id="statusMsg" data-en="For help, dial 2-1-1 anytime." data-es="Para ayuda, marque 2-1-1 a cualquier hora.">For help, dial 2-1-1 anytime.</span><span data-en="Work in progress: listings Nov 16" data-es="En construcción: lugares el 16 de nov.">Work in progress: listings Nov 16</span></div>
+</div>
+
+</body>
+</html>

@@ -25,6 +25,45 @@
       `<h3>${esc(c.county)} ${es() ? "" : "County"}</h3><p class="badge" style="margin-top:6px">${esc(es() ? g.es : g.en)}</p>
        <dl class="kv">${rows.map(r => `<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>`;
     document.querySelectorAll("#map path").forEach(p => p.classList.toggle("on", p.dataset.c === c.county));
+    explain(c);
+  }
+
+
+  // Explainer: how the selected county's score is built. Each ingredient is compared with the
+  // average NJ county (z-score). The score is 50 plus 2.5 points per ingredient per standard deviation.
+  const ING = [
+    ["food_insecure_pct", "Food insecurity", "Inseguridad alimentaria"],
+    ["poverty_pct", "Poverty", "Pobreza"],
+    ["limited_access_pct", "Limited access to healthy food", "Acceso limitado a comida saludable"],
+    ["unemployment_pct", "Unemployment", "Desempleo"],
+  ];
+  let stats = null;
+  function explain(c) {
+    const el = document.getElementById("explain");
+    if (!el) return;
+    if (!stats) stats = ING.map(([k]) => { const v = data.counties.map(x => x[k]); const m = v.reduce((a, b) => a + b, 0) / v.length; return [m, Math.sqrt(v.reduce((a, b) => a + (b - m) ** 2, 0) / v.length)]; });
+    const pts = ING.map(([k], i) => 2.5 * (c[k] - stats[i][0]) / stats[i][1]);
+    const max = 8;
+    const rows = ING.map(([k, en, sp], i) => {
+      const v = pts[i], w = Math.min(50, Math.abs(v) / max * 50);
+      const side = v >= 0 ? `left:50%;width:${w}%` : `right:50%;width:${w}%`;
+      return `<div class="ex-row"><span class="ex-lab">${esc(es() ? sp : en)}<small>${c[k]}% ${es() ? "aquí, promedio" : "here, average"} ${stats[i][0].toFixed(1)}%</small></span>
+        <span class="ex-track"><span class="ex-bar ${v >= 0 ? "up" : "down"}" style="${side}"></span></span>
+        <span class="ex-val">${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(1)}</span></div>`;
+    }).join("");
+    const total = 50 + pts.reduce((a, b) => a + b, 0);
+    const top = ING[pts.indexOf(Math.max(...pts))], low = ING[pts.indexOf(Math.min(...pts))];
+    const hi = Math.max(...pts), lo = Math.min(...pts);
+    let why;
+    if (hi <= 0) why = es() ? `Los cuatro números de ${c.county} están por debajo del promedio de NJ, así que su puntaje queda bajo 50. El que más lo baja: ${low[2].toLowerCase()}.` : `All four of ${c.county}'s numbers are below the NJ average, so its score lands under 50. The one that pulls it down the most: ${low[1].toLowerCase()}.`;
+    else if (lo >= 0) why = es() ? `Los cuatro números de ${c.county} están por encima del promedio de NJ. El que más sube el puntaje: ${top[2].toLowerCase()}.` : `All four of ${c.county}'s numbers are above the NJ average. The one that pushes the score up the most: ${top[1].toLowerCase()}.`;
+    else why = es() ? `Lo que más sube el puntaje de ${c.county}: ${top[2].toLowerCase()}. Lo que más lo baja: ${low[2].toLowerCase()}.` : `What pushes ${c.county}'s score up the most: ${top[1].toLowerCase()}. What pulls it down the most: ${low[1].toLowerCase()}.`;
+    el.innerHTML = `<h3>${es() ? "Por qué " + esc(c.county) + " tiene " + c.need_score.toFixed(1) : "Why " + esc(c.county) + " scores " + c.need_score.toFixed(1)}</h3>
+      <p class="muted small">${es() ? "Todo condado empieza en 50, el promedio de NJ. Cada ingrediente suma o resta puntos según qué tan lejos está del promedio." : "Every county starts at 50, the NJ average. Each ingredient adds or subtracts points depending on how far it is from average."}</p>
+      <div class="ex-head"><span></span><span class="ex-track ex-axis"><em>${es() ? "baja el puntaje" : "lowers score"}</em><em>${es() ? "sube el puntaje" : "raises score"}</em></span><span></span></div>
+      ${rows}
+      <p class="ex-sum">50 ${pts.map(v => (v >= 0 ? "+ " : "− ") + Math.abs(v).toFixed(1)).join(" ")} = <strong>${total.toFixed(1)}</strong></p>
+      <p>${esc(why)}</p>`;
   }
 
   function render() {

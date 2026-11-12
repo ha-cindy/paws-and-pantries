@@ -9,11 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=8">
-<script src="assets/analytics.js?v=8"></script>
-<script src="assets/common.js?v=8" defer></script>
-<script src="assets/paint.js?v=8" defer></script>
-<script src="assets/help.js?v=8" defer></script>
+<link rel="stylesheet" href="assets/vendor/leaflet.css">
+<link rel="stylesheet" href="assets/style.css?v=10">
+<script src="assets/analytics.js?v=10"></script>
+<script src="assets/common.js?v=10" defer></script>
+<script src="assets/paint.js?v=10" defer></script>
+<script src="assets/vendor/leaflet.js" defer></script>
+<script src="assets/map.js?v=10" defer></script>
+<script src="assets/help.js?v=10" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -23,6 +26,7 @@
   <a class="menu-link" href="./" aria-current="page" data-i18n="nav_help">Find help</a>
   <a class="menu-link" href="need.html" data-i18n="nav_need">NJ need</a>
   <a class="menu-link" href="wait.html" data-i18n="nav_wait">Pets who wait</a>
+  <a class="menu-link" href="club.html" data-i18n="nav_club">Zuzu's Club</a>
   <a class="menu-link" href="about.html" data-i18n="nav_about">About</a>
 <span class="mb-spacer"></span>
         <button class="menu-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
@@ -57,7 +61,24 @@
     <button class="chip" type="button" data-filter="food" aria-pressed="false" data-i18n="f_food">Pet food</button>
     <button class="chip" type="button" data-filter="vet" aria-pressed="false" data-i18n="f_vet">Vet care</button>
     <button class="chip" type="button" data-filter="spay" aria-pressed="false" data-i18n="f_spay">Spay and neuter</button>
+    <button class="chip" type="button" data-filter="adopt" aria-pressed="false" data-en="Adopt" data-es="Adoptar">Adopt</button>
   </div>
+
+  <section class="section" aria-labelledby="mapH">
+    <h2 id="mapH" data-en="On the map" data-es="En el mapa">On the map</h2>
+    <div class="mapbox">
+      <div id="helpMap" role="application" aria-label="Map of pet help in Middlesex County"></div>
+      <div class="place-card" id="placeCard" aria-live="polite"></div>
+    </div>
+    <div class="map-legend">
+      <span><i style="background:#F2932E"></i><span data-en="Pet food" data-es="Comida">Pet food</span></span>
+      <span><i style="background:#E5484D"></i><span data-en="Vet, spay and neuter" data-es="Veterinario y esterilización">Vet, spay and neuter</span></span>
+      <span><i style="background:#3E3D44"></i><span data-en="Adopt" data-es="Adoptar">Adopt</span></span>
+      <span><i style="background:#E8B320"></i><span data-en="Zuzu's shelter" data-es="El refugio de Zuzu">Zuzu's shelter</span></span>
+      <span class="muted" id="mapCount"></span>
+    </div>
+    <p class="muted small" data-en="Pins marked &quot;from an official list&quot; come from county and state lists and are still being confirmed by Cindy. Call before you go." data-es="Los marcadores que dicen &quot;de una lista oficial&quot; vienen de listas del condado y del estado, y Cindy todavía los está confirmando. Llame antes de ir.">Pins marked "from an official list" come from county and state lists and are still being confirmed by Cindy. Call before you go.</p>
+  </section>
 
   <section class="section" aria-labelledby="localH">
     <div class="section-head"><h2 id="localH" data-i18n="local_h">Near you</h2></div>

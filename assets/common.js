@@ -1,7 +1,7 @@
 // Shared: language toggle (English/Spanish), bigger text, nav state.
 const T = {
   en: {
-    nav_help: "Find help", nav_need: "NJ need", nav_wait: "Pets who wait", nav_about: "About",
+    nav_help: "Find help", nav_need: "NJ need", nav_wait: "Pets who wait", nav_about: "About", nav_club: "Zuzu's Club",
     big: "A+ Bigger text", lang: "Español",
     hi_zuzu: "hi, I'm Zuzu",
     help_h1: "Help for pets and the people who love them.",
@@ -20,7 +20,7 @@ const T = {
     report: "Something wrong with a listing?", report_link: "Tell us",
   },
   es: {
-    nav_help: "Ayuda", nav_need: "Necesidad", nav_wait: "Esperan", nav_about: "Info",
+    nav_help: "Ayuda", nav_need: "Necesidad", nav_wait: "Esperan", nav_about: "Info", nav_club: "Club",
     big: "A+ Letra grande", lang: "English",
     hi_zuzu: "hola, soy Zuzu",
     help_h1: "Ayuda para las mascotas y las personas que las quieren.",

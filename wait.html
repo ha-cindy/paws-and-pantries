@@ -9,11 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=8">
-<script src="assets/analytics.js?v=8"></script>
-<script src="assets/common.js?v=8" defer></script>
-<script src="assets/paint.js?v=8" defer></script>
-<script src="assets/wait.js?v=8" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=10">
+<script src="assets/analytics.js?v=10"></script>
+<script src="assets/common.js?v=10" defer></script>
+<script src="assets/paint.js?v=10" defer></script>
+<script src="assets/wait.js?v=10" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -23,6 +23,7 @@
   <a class="menu-link" href="./" data-i18n="nav_help">Find help</a>
   <a class="menu-link" href="need.html" data-i18n="nav_need">NJ need</a>
   <a class="menu-link" href="wait.html" aria-current="page" data-i18n="nav_wait">Pets who wait</a>
+  <a class="menu-link" href="club.html" data-i18n="nav_club">Zuzu's Club</a>
   <a class="menu-link" href="about.html" data-i18n="nav_about">About</a>
 <span class="mb-spacer"></span>
         <button class="menu-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
@@ -50,6 +51,12 @@
     <div class="bars" id="bars"></div>
   </section>
 
+  <section class="section card" aria-labelledby="howH">
+    <h2 id="howH" data-en="How to read this" data-es="Cómo leer esto">How to read this</h2>
+    <p data-en="Each bar compares two pets who are the same in every way the shelter recorded, except one thing. &quot;+113%&quot; for senior cats means a senior cat waited a bit more than twice as long as a young adult cat who was otherwise alike." data-es="Cada barra compara dos mascotas iguales en todo lo que el refugio registró, menos una cosa. &quot;+113%&quot; para gatos mayores significa que un gato mayor esperó un poco más del doble que un gato adulto joven parecido en todo lo demás.">Each bar compares two pets who are the same in every way the shelter recorded, except one thing. "+113%" for senior cats means a senior cat waited a bit more than twice as long as a young adult cat who was otherwise alike.</p>
+    <p data-en="The thin line on each bar is the range the real answer most likely falls in. A short line means we can be more sure." data-es="La línea delgada en cada barra es el rango donde probablemente está la respuesta real. Una línea corta significa más seguridad.">The thin line on each bar is the range the real answer most likely falls in. A short line means we can be more sure.</p>
+  </section>
+
   <section class="section chart-card" aria-labelledby="tryH">
     <h2 id="tryH" data-en="Try it: how long might this pet wait?" data-es="Pruébelo: ¿cuánto podría esperar esta mascota?">Try it: how long might this pet wait?</h2>
     <div class="chips" role="group" aria-label="Age" id="ageChips"></div>
@@ -60,11 +67,13 @@
     </div>
   </section>
 
-  <section class="section">
-    <h2 data-en="What this does and doesn't tell us" data-es="Lo que esto dice y lo que no">What this does and doesn't tell us</h2>
-    <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px">
+  <section class="section limits">
+    <h2 data-en="What this can't tell you" data-es="Lo que esto no puede decirle">What this can't tell you</h2>
+    <ul>
       <li data-en="It shows which traits go with longer waits. It can't predict one specific pet's wait: the model explains only about 13% (cats) to 21% (dogs) of the differences." data-es="Muestra qué rasgos van con esperas más largas. No puede predecir la espera de una mascota en particular: el modelo explica solo entre el 13% (gatos) y el 21% (perros) de las diferencias.">It shows which traits go with longer waits. It can't predict one specific pet's wait: the model explains only about 13% (cats) to 21% (dogs) of the differences.</li>
       <li data-en="It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted." data-es="Viene de un refugio de Texas, así que los de Nueva Jersey pueden ser distintos. Solo cuenta mascotas que fueron adoptadas.">It's from one Texas shelter, so New Jersey shelters may differ. It only counts pets who were adopted.</li>
+      <li data-en="It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors." data-es="Muestra patrones, no causas. Una gata mayor no espera más por ser peor. Menos personas buscan mascotas mayores.">It shows patterns, not causes. A senior cat doesn't wait longer because she is worse. Fewer people look for seniors.</li>
+      <li data-en="It should never be used to decide which pets get a chance. I built it to show who needs extra attention." data-es="Nunca debe usarse para decidir qué mascotas reciben una oportunidad. Lo hice para mostrar quién necesita más atención.">It should never be used to decide which pets get a chance. I built it to show who needs extra attention.</li>
       <li data-en="The famous black cat bias is real here, but small next to age and breed." data-es="El famoso prejuicio contra los gatos negros es real aquí, pero pequeño comparado con la edad y la raza.">The famous black cat bias is real here, but small next to age and breed.</li>
     </ul>
     <p class="muted small" id="src"></p>

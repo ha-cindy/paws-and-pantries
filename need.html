@@ -9,11 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=8">
-<script src="assets/analytics.js?v=8"></script>
-<script src="assets/common.js?v=8" defer></script>
-<script src="assets/paint.js?v=8" defer></script>
-<script src="assets/need.js?v=8" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=10">
+<script src="assets/analytics.js?v=10"></script>
+<script src="assets/common.js?v=10" defer></script>
+<script src="assets/paint.js?v=10" defer></script>
+<script src="assets/need.js?v=10" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="crayon" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="4" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="g"/><feDisplacementMap in="d" in2="g" scale="2.2"/></filter></defs></svg>
@@ -23,6 +23,7 @@
   <a class="menu-link" href="./" data-i18n="nav_help">Find help</a>
   <a class="menu-link" href="need.html" aria-current="page" data-i18n="nav_need">NJ need</a>
   <a class="menu-link" href="wait.html" data-i18n="nav_wait">Pets who wait</a>
+  <a class="menu-link" href="club.html" data-i18n="nav_club">Zuzu's Club</a>
   <a class="menu-link" href="about.html" data-i18n="nav_about">About</a>
 <span class="mb-spacer"></span>
         <button class="menu-btn" id="bigBtn" type="button" aria-pressed="false" data-i18n="big">A+ Bigger text</button>
@@ -50,6 +51,23 @@
       </div>
       <div class="detail" id="detail" aria-live="polite"></div>
     </div>
+  </section>
+
+  <section class="section chart-card" aria-labelledby="exH">
+    <h2 id="exH" data-en="How the score works" data-es="Cómo funciona el puntaje">How the score works</h2>
+    <p class="muted" data-en="No black box. Pick a county on the map above and see exactly which numbers move its score." data-es="Sin caja negra. Elija un condado en el mapa de arriba y vea exactamente qué números mueven su puntaje.">No black box. Pick a county on the map above and see exactly which numbers move its score.</p>
+    <div id="explain" class="explain" aria-live="polite"></div>
+  </section>
+
+  <section class="section limits" aria-labelledby="limH">
+    <h2 id="limH" data-en="What this can't tell you" data-es="Lo que esto no puede decirle">What this can't tell you</h2>
+    <ul>
+      <li data-en="It can't see inside a county. A town with high need can hide inside a county with a low score." data-es="No puede ver dentro de un condado. Un pueblo con mucha necesidad puede esconderse en un condado con puntaje bajo.">It can't see inside a county. A town with high need can hide inside a county with a low score.</li>
+      <li data-en="It doesn't count pets. No public data shows how many pets live in each county, so this measures people's need, not pets' need." data-es="No cuenta mascotas. No hay datos públicos de cuántas mascotas viven en cada condado, así que esto mide la necesidad de las personas, no la de las mascotas.">It doesn't count pets. No public data shows how many pets live in each county, so this measures people's need, not pets' need.</li>
+      <li data-en="The four ingredients count equally. That was my choice, and a different choice would change the order a little." data-es="Los cuatro ingredientes cuentan igual. Esa fue mi decisión, y otra decisión cambiaría un poco el orden.">The four ingredients count equally. That was my choice, and a different choice would change the order a little.</li>
+      <li data-en="The numbers are from different years (2019 to 2024), so it's a snapshot, not a live reading." data-es="Los números son de años distintos (2019 a 2024), así que es una foto, no una lectura en vivo.">The numbers are from different years (2019 to 2024), so it's a snapshot, not a live reading.</li>
+      <li data-en="A score never decides who gets help. Everyone on this site sees the same listings." data-es="Un puntaje nunca decide quién recibe ayuda. Todos ven los mismos lugares en este sitio.">A score never decides who gets help. Everyone on this site sees the same listings.</li>
+    </ul>
   </section>
 
   <section class="section" aria-labelledby="grpH">
