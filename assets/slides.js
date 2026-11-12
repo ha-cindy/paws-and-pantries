@@ -31,13 +31,12 @@
         <div class="v-bar"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><span class="v-title">zuzu_album.jpg</span><span class="v-count" aria-live="polite"></span></div>
         <div class="v-stage"><button type="button" class="v-nav v-prev" aria-label="Previous photo">&#9664;</button><img class="v-img" alt=""><button type="button" class="v-nav v-next" aria-label="Next photo">&#9654;</button></div>
         <p class="v-cap" aria-live="polite"></p>
-        <div class="v-tools"><button type="button" class="menu-btn v-play"></button><div class="v-thumbs" role="tablist" aria-label="Photos"></div></div>
+        <div class="v-tools"><button type="button" class="menu-btn v-play"></button><div class="v-thumbs" role="group" aria-label="Photos"></div></div>
       </div>`;
     const img = root.querySelector(".v-img"), cap = root.querySelector(".v-cap"), cnt = root.querySelector(".v-count"), play = root.querySelector(".v-play"), thumbs = root.querySelector(".v-thumbs");
     PHOTOS.forEach((p, k) => {
-      const b = document.createElement("button"); b.type = "button"; b.className = "v-th"; b.setAttribute("role", "tab");
+      const b = document.createElement("button"); b.type = "button"; b.className = "v-th"; b.tabIndex = -1;
       b.innerHTML = `<img src="${P}${p[0]}-t.jpg" alt="" width="56" height="56" loading="lazy">`;
-      b.setAttribute("aria-label", p[1]);
       b.addEventListener("click", () => { stop(); show(k, "thumb"); });
       thumbs.appendChild(b);
     });
@@ -46,10 +45,10 @@
       i = (k + PHOTOS.length) % PHOTOS.length;
       const p = PHOTOS[i];
       img.classList.remove("in"); void img.offsetWidth;
-      img.src = P + p[0] + ".jpg"; img.alt = p[1]; img.classList.add("in");
+      img.src = P + p[0] + ".jpg"; img.alt = es() ? p[2] : p[1]; img.classList.add("in");
       cap.textContent = es() ? p[2] : p[1];
       cnt.textContent = (i + 1) + " / " + PHOTOS.length;
-      thumbs.querySelectorAll(".v-th").forEach((t, k2) => { t.classList.toggle("on", k2 === i); t.setAttribute("aria-selected", k2 === i ? "true" : "false"); });
+      thumbs.querySelectorAll(".v-th").forEach((t, k2) => { const on = k2 === i; t.classList.toggle("on", on); t.tabIndex = on ? 0 : -1; if (on) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current"); t.setAttribute("aria-label", (es() ? "Foto " : "Photo ") + (k2 + 1) + ": " + (es() ? PHOTOS[k2][2] : PHOTOS[k2][1])); });
       const on = thumbs.children[i]; if (on && on.scrollIntoView) on.scrollIntoView({ block: "nearest", inline: "center", behavior: reduce ? "auto" : "smooth" });
       const nx = new Image(); nx.src = P + PHOTOS[(i + 1) % PHOTOS.length][0] + ".jpg";
       if (how) track("photo_view", { photo: p[0], how: how });
@@ -59,8 +58,11 @@
     play.addEventListener("click", () => { playing ? stop() : start(); track("photo_play", { on: playing ? "yes" : "no" }); });
     root.querySelector(".v-prev").addEventListener("click", () => { stop(); show(i - 1, "prev"); });
     root.querySelector(".v-next").addEventListener("click", () => { stop(); show(i + 1, "next"); });
-    root.tabIndex = 0;
-    root.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") { stop(); show(i - 1, "key"); } else if (e.key === "ArrowRight") { stop(); show(i + 1, "key"); } });
+    root.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      e.preventDefault(); stop(); show(i + (e.key === "ArrowLeft" ? -1 : 1), "key");
+      if (document.activeElement && document.activeElement.classList.contains("v-th")) thumbs.children[i].focus();
+    });
     let sx = null;
     img.addEventListener("pointerdown", (e) => { sx = e.clientX; });
     img.addEventListener("pointerup", (e) => { if (sx === null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 40) { stop(); show(dx < 0 ? i + 1 : i - 1, "swipe"); } });

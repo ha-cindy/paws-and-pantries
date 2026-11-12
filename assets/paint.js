@@ -132,6 +132,23 @@
       }
     }));
 
+    // keyboard: each toolbar is one tab stop; arrow keys move inside it
+    const rove = (box, sel) => {
+      if (!box) return;
+      const items = () => [...box.querySelectorAll(sel)];
+      items().forEach((b, k) => { b.tabIndex = k === 0 ? 0 : -1; });
+      box.addEventListener("keydown", (e) => {
+        const L = items(), at = L.indexOf(document.activeElement); if (at < 0) return;
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        let to = step ? (at + step + L.length) % L.length : e.key === "Home" ? 0 : e.key === "End" ? L.length - 1 : -1;
+        if (to < 0) return;
+        e.preventDefault(); L[at].tabIndex = -1; L[to].tabIndex = 0; L[to].focus();
+      });
+      box.addEventListener("focusin", (e) => { const L = items(); if (L.includes(e.target)) L.forEach(b => { b.tabIndex = b === e.target ? 0 : -1; }); });
+    };
+    rove(document.querySelector(".toolbox"), ".tool");
+    rove(document.querySelector(".palette"), ".sw");
+
     setTool("select");
   });
 })();

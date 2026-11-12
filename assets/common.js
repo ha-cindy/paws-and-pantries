@@ -40,6 +40,19 @@ const T = {
   },
 };
 
+// Spanish names for screen-reader labels (aria-label). Anything not listed stays as is.
+const ARIA_ES = {
+  "Colors": "Colores", "Zoom": "Lupa", "Window title": "Título de la ventana", "Text": "Texto", "Status bar": "Barra de estado",
+  "Spray": "Aerosol", "Pencil": "Lápiz", "Paws and Pantries home": "Inicio de Paws and Pantries", "Paint tools": "Herramientas de dibujo",
+  "Minimize": "Minimizar", "Maximize": "Maximizar", "Main": "Principal", "Fill": "Rellenar", "Eraser": "Borrador", "Close": "Cerrar",
+  "Brush": "Pincel", "Browse": "Navegar", "Zuzu's photo album": "Álbum de fotos de Zuzu", "Why this exists": "Por qué existe esto",
+  "Traits": "Rasgos", "Map view": "Vista del mapa", "Map of pet help in Middlesex County": "Mapa de ayuda para mascotas en el condado de Middlesex",
+  "Map of New Jersey counties shaded by need score": "Mapa de los condados de Nueva Jersey sombreados según su nivel de necesidad",
+  "Intake story": "Cómo llegó al refugio", "Filter by type": "Filtrar por tipo", "Drawing tools": "Herramientas de dibujo",
+  "Drawing area": "Área de dibujo", "Choose cats or dogs": "Elija gatos o perros", "Age": "Edad", "Ask Zuzu": "Pregúntele a Zuzu",
+  "Start menu": "Menú Inicio", "Taskbar": "Barra de tareas", "Next photo": "Foto siguiente", "Previous photo": "Foto anterior",
+  "Photos": "Fotos", "Type a question": "Escriba una pregunta",
+};
 const PP = {
   lang: "en",
   t(key) { return (T[this.lang] && T[this.lang][key]) || T.en[key] || key; },
@@ -51,7 +64,16 @@ const PP = {
     document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = this.t(el.dataset.i18nPh); });
     document.querySelectorAll("[data-i18n-alt]").forEach(el => { el.alt = this.t(el.dataset.i18nAlt); });
     document.querySelectorAll("[data-en]").forEach(el => { el.textContent = this.lang === "es" ? el.dataset.es : el.dataset.en; });
+    this.aria();
     document.dispatchEvent(new CustomEvent("pp:lang"));
+  },
+  aria(root) {
+    (root || document).querySelectorAll("[aria-label]").forEach(el => {
+      const en = el.dataset.ariaEn || el.getAttribute("aria-label");
+      el.dataset.ariaEn = en;
+      const c = en.match(/^Color (#[0-9A-F]{6})$/i);
+      el.setAttribute("aria-label", this.lang === "es" ? (c ? "Color " + c[1] : (ARIA_ES[en] || en)) : en);
+    });
   },
   init() {
     const q = new URLSearchParams(location.search).get("lang");
@@ -69,6 +91,7 @@ const PP = {
       });
     }
     this.apply();
+    window.addEventListener("load", () => this.aria());
   },
 };
 window.PP = PP;

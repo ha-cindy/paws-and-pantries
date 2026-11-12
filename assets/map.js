@@ -49,6 +49,9 @@
       if (show && !map.hasLayer(markers[p.id])) markers[p.id].addTo(map);
       if (!show && map.hasLayer(markers[p.id])) map.removeLayer(markers[p.id]);
       markers[p.id].setIcon(pin(p, sel === p.id));
+      const el = markers[p.id].getElement();
+      if (el) { el.setAttribute("role", "button"); el.setAttribute("aria-label", `${es() && p.name_es ? p.name_es : p.name}, ${esc(p.town)}`); el.setAttribute("aria-pressed", sel === p.id ? "true" : "false");
+        el.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(p); const n = markers[p.id].getElement(); if (n) n.focus(); } }; }
       markers[p.id].setZIndexOffset(sel === p.id ? 1000 : 0);
     });
     if (sel && !shown.find(p => p.id === sel)) sel = null;

@@ -76,14 +76,14 @@
     const LINKS = [["./", "Find help", "Ayuda", "index.html"], ["need.html", "NJ need", "Necesidad en NJ", "need.html"], ["wait.html", "Pets who wait", "Mascotas que esperan", "wait.html"], ["club.html", "Zuzu's Club", "El Club de Zuzu", "club.html"], ["about.html", "About", "Acerca de", "about.html"]];
 
     const bar = document.createElement("div");
-    bar.className = "taskbar";
+    bar.className = "taskbar"; bar.setAttribute("role", "region"); bar.setAttribute("aria-label", "Taskbar");
     bar.innerHTML = `<button type="button" class="start" id="startBtn" aria-haspopup="true" aria-expanded="false"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><span data-en="Start" data-es="Inicio">Start</span></button>
       <span class="task on"><img class="pix" src="assets/sprites/zuzu-icon.png" alt="" width="22" height="17"><span>zuzu.bmp</span></span>
       <button type="button" class="task" id="azuTask" aria-pressed="false"><span data-en="Ask Zuzu" data-es="Pregúntele a Zuzu">Ask Zuzu</span></button>
       <a class="task" href="club.html#quiz" data-track="taskbar quiz"><span data-en="Quiz" data-es="Quiz">Quiz</span></a>
       <span class="tb-space"></span><span class="clock" id="clock" aria-hidden="true"></span>`;
     const menu = document.createElement("div");
-    menu.className = "startmenu"; menu.hidden = true; menu.setAttribute("role", "menu");
+    menu.className = "startmenu"; menu.hidden = true; menu.setAttribute("role", "menu"); menu.setAttribute("aria-label", "Start menu");
     menu.innerHTML = `<div class="sm-side"><span>Paws &amp; Pantries</span></div><div class="sm-items">` +
       LINKS.map(l => `<a role="menuitem" href="${l[0]}"${here === l[3] || (here === "" && l[3] === "index.html") ? ' aria-current="page"' : ""} data-en="${l[1]}" data-es="${l[2]}">${l[1]}</a>`).join("") +
       `<hr><button type="button" role="menuitem" id="smAsk" data-en="Ask Zuzu" data-es="Pregúntele a Zuzu">Ask Zuzu</button>
@@ -98,7 +98,7 @@
       <div class="azu-quick" id="azuQuick"></div>
       <form class="azu-form" id="azuForm"><input id="azuIn" type="text" autocomplete="off" maxlength="80" aria-label="Type a question"><button class="btn light" type="submit" data-en="Ask" data-es="Enviar">Ask</button></form>
       <p class="azu-fine" data-en="I'm a simple helper that follows rules, not an AI chatbot. I only answer from this site's listings. If I don't understand a question, Cindy sees the first few words (with numbers removed) so she can teach me." data-es="Soy una ayudante sencilla que sigue reglas, no un chatbot de IA. Solo respondo con los lugares de este sitio. Si no entiendo una pregunta, Cindy ve las primeras palabras (sin números) para enseñarme.">I'm a simple helper that follows rules, not an AI chatbot. I only answer from this site's listings. If I don't understand a question, Cindy sees the first few words (never your town or numbers) so she can teach me.</p>`;
-    document.body.appendChild(azu); document.body.appendChild(menu); document.body.appendChild(bar);
+    document.body.appendChild(azu); bar.appendChild(menu); document.body.appendChild(bar);
     if (window.PP && PP.apply) try { PP.apply(); } catch (e) { /* ignore */ }
 
     // clock
